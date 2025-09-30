@@ -6,15 +6,15 @@
 }
 
 :root {
-    /* Colors */
-    --primary-color: #2c3e50;
-    --secondary-color: #34495e;
-    --accent-color: #e74c3c;
-    --gold-color: #f39c12;
-    --light-gray: #ecf0f1;
-    --dark-gray: #7f8c8d;
+    /* Colors - Red Palette */
+    --primary-color: #8b0000;
+    --secondary-color: #a52a2a;
+    --accent-color: #dc143c;
+    --gold-color: #cd5c5c;
+    --light-gray: #f5f5f5;
+    --dark-gray: #696969;
     --white: #ffffff;
-    --black: #2c3e50;
+    --black: #2c2c2c;
     
     /* Typography */
     --font-primary: 'Crimson Text', serif;
