@@ -1,0 +1,225 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio - Canto Gregoriano{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="bg-gradient-primary text-white py-5">
+    <div class="container">
+        <div class="row align-items-center min-vh-50">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4 animate-fade-in-up">
+                    Bienvenidos al Canto Gregoriano
+                </h1>
+                <p class="lead mb-4 animate-fade-in-up">
+                    Descubre la belleza atemporal de la música sacra que ha inspirado a generaciones durante más de mil años.
+                </p>
+                <div class="d-flex flex-column flex-sm-row gap-3 animate-fade-in-up">
+                    <a href="{{ url_for('biblioteca') }}" class="btn btn-light btn-lg">
+                        <i class="fas fa-music me-2"></i> Explorar Biblioteca
+                    </a>
+                    <a href="{{ url_for('historia') }}" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-book me-2"></i> Conocer Historia
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div class="bg-white bg-opacity-10 rounded-3 p-5 animate-fade-in-up">
+                    <i class="fas fa-play-circle display-1 mb-3"></i>
+                    <p class="mb-0">Video: Coro en acción</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission Section -->
+<section class="py-5 bg-gradient-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-gradient mb-4">Nuestra Misión</h2>
+            <p class="lead text-muted">Nos dedicamos a preservar, estudiar y difundir el canto gregoriano como patrimonio cultural y espiritual de la humanidad. A través de nuestra comunidad, buscamos:</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border-0 shadow-soft">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <i class="fas fa-heart text-primary fs-2"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Preservar la Tradición</h4>
+                        <p class="text-muted">Mantener viva la tradición milenaria del canto gregoriano para las futuras generaciones.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border-0 shadow-soft">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <i class="fas fa-users text-primary fs-2"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Crear Comunidad</h4>
+                        <p class="text-muted">Unir a personas de todo el mundo que comparten el amor por esta forma de arte sagrado.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border-0 shadow-soft">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <i class="fas fa-graduation-cap text-primary fs-2"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Educar y Formar</h4>
+                        <p class="text-muted">Proporcionar recursos educativos y oportunidades de aprendizaje para todos los niveles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Links Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold mb-4">Acceso Rápido</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <a href="{{ url_for('biblioteca') }}" class="text-decoration-none">
+                    <div class="card h-100 border-0 shadow-soft hover-lift">
+                        <div class="card-body text-center p-4">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                                <i class="fas fa-library text-primary fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-dark">Biblioteca</h4>
+                            <p class="text-muted">Explora nuestra colección de grabaciones, partituras y recursos multimedia</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <a href="{{ url_for('historia') }}" class="text-decoration-none">
+                    <div class="card h-100 border-0 shadow-soft hover-lift">
+                        <div class="card-body text-center p-4">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                                <i class="fas fa-book text-primary fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-dark">Historia</h4>
+                            <p class="text-muted">Descubre los orígenes y evolución del canto gregoriano a lo largo de los siglos</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <a href="{{ url_for('eventos') }}" class="text-decoration-none">
+                    <div class="card h-100 border-0 shadow-soft hover-lift">
+                        <div class="card-body text-center p-4">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                                <i class="fas fa-calendar text-primary fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-dark">Eventos</h4>
+                            <p class="text-muted">Participa en misas, conciertos y celebraciones con canto gregoriano</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Recent Content Section -->
+<section class="py-5 bg-gradient-light">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Recent Articles -->
+            <div class="col-lg-6">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3 class="fw-bold mb-0">Artículos Recientes</h3>
+                    <a href="{{ url_for('blog') }}" class="btn btn-outline-primary btn-sm">Ver todos</a>
+                </div>
+                {% if articulos %}
+                    {% for articulo in articulos %}
+                    <div class="card border-0 shadow-soft mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="{{ url_for('ver_articulo', articulo_id=articulo.id) }}" class="text-decoration-none text-dark">
+                                    {{ articulo.titulo }}
+                                </a>
+                            </h5>
+                            <div class="d-flex align-items-center text-muted small mb-2">
+                                <i class="fas fa-calendar me-2"></i>
+                                <span class="me-3">{{ articulo.fecha_publicacion[:10] }}</span>
+                                <i class="fas fa-user me-2"></i>
+                                <span>{{ articulo.autor }}</span>
+                            </div>
+                            <p class="card-text text-muted">{{ articulo.contenido[:150] }}...</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="text-center py-4">
+                        <i class="fas fa-newspaper text-muted fs-1 mb-3"></i>
+                        <p class="text-muted">No hay artículos disponibles en este momento.</p>
+                    </div>
+                {% endif %}
+            </div>
+            
+            <!-- Upcoming Events -->
+            <div class="col-lg-6">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3 class="fw-bold mb-0">Próximos Eventos</h3>
+                    <a href="{{ url_for('eventos') }}" class="btn btn-outline-primary btn-sm">Ver todos</a>
+                </div>
+                {% if eventos %}
+                    {% for evento in eventos %}
+                    <div class="card border-0 shadow-soft mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ evento.titulo }}</h5>
+                            <div class="d-flex align-items-center text-muted small mb-2">
+                                <i class="fas fa-calendar me-2"></i>
+                                <span class="me-3">{{ evento.fecha_evento[:10] }}</span>
+                                {% if evento.lugar %}
+                                <i class="fas fa-map-marker-alt me-2"></i>
+                                <span>{{ evento.lugar }}</span>
+                                {% endif %}
+                            </div>
+                            {% if evento.descripcion %}
+                            <p class="card-text text-muted">{{ evento.descripcion[:150] }}...</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="text-center py-4">
+                        <i class="fas fa-calendar-times text-muted fs-1 mb-3"></i>
+                        <p class="text-muted">No hay eventos programados en este momento.</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 bg-gradient-primary text-white">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <h2 class="display-5 fw-bold mb-4">Únete a Nuestra Comunidad</h2>
+                <p class="lead mb-4">Forma parte de una comunidad global dedicada al canto gregoriano. Comparte tu pasión, aprende de otros y contribuye a preservar esta tradición milenaria.</p>
+                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                    <a href="{{ url_for('contacto') }}" class="btn btn-light btn-lg">
+                        <i class="fas fa-envelope me-2"></i> Contáctanos
+                    </a>
+                    <a href="{{ url_for('biblioteca') }}" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-music me-2"></i> Explorar Recursos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

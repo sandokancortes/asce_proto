@@ -1,0 +1,497 @@
+{% extends "base.html" %}
+
+{% block title %}Contacto - Canto Gregoriano{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="bg-gradient-primary text-white py-5">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <h1 class="display-4 fw-bold mb-4">Contacto</h1>
+                <p class="lead">Ponte en contacto con nosotros y únete a nuestra comunidad</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Contact Info -->
+            <div class="col-lg-4">
+                <div class="sticky-top" style="top: 100px;">
+                    <h2 class="display-6 fw-bold text-gradient mb-4">Envíanos un Mensaje</h2>
+                    <p class="lead text-muted mb-5">¿Tienes preguntas sobre el canto gregoriano? ¿Quieres compartir tu experiencia o contribuir a nuestro proyecto? Estamos aquí para escucharte.</p>
+                    
+                    <!-- Contact Methods -->
+                    <div class="row g-4 mb-5">
+                        <div class="col-12">
+                            <div class="card border-0 shadow-soft h-100">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-start">
+                                        <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                            <i class="fas fa-envelope text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="fw-bold mb-1">Correo Electrónico</h5>
+                                            <p class="text-primary mb-1">info@cantogregoriano.org</p>
+                                            <small class="text-muted">Respuesta en 24-48 horas</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12">
+                            <div class="card border-0 shadow-soft h-100">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-start">
+                                        <div class="bg-success bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                            <i class="fab fa-whatsapp text-success"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="fw-bold mb-1">WhatsApp</h5>
+                                            <p class="text-success mb-1">+1 (555) 123-4567</p>
+                                            <small class="text-muted">Disponible de 9:00 a 18:00</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12">
+                            <div class="card border-0 shadow-soft h-100">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-start">
+                                        <div class="bg-info bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                            <i class="fas fa-phone text-info"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="fw-bold mb-1">Teléfono</h5>
+                                            <p class="text-info mb-1">+1 (555) 123-4567</p>
+                                            <small class="text-muted">Lunes a Viernes, 9:00-17:00</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media -->
+                    <div class="card border-0 shadow-soft">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-3">Síguenos en Redes Sociales</h5>
+                            <div class="d-flex gap-3">
+                                <a href="#" class="btn btn-outline-primary btn-sm">
+                                    <i class="fab fa-facebook me-1"></i> Facebook
+                                </a>
+                                <a href="#" class="btn btn-outline-info btn-sm">
+                                    <i class="fab fa-twitter me-1"></i> Twitter
+                                </a>
+                                <a href="#" class="btn btn-outline-danger btn-sm">
+                                    <i class="fab fa-youtube me-1"></i> YouTube
+                                </a>
+                                <a href="#" class="btn btn-outline-warning btn-sm">
+                                    <i class="fab fa-instagram me-1"></i> Instagram
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-soft">
+                    <div class="card-header bg-gradient-light border-0 py-4">
+                        <h3 class="fw-bold mb-0 text-center">Formulario de Contacto</h3>
+                    </div>
+                    <div class="card-body p-5">
+                        <form method="POST" action="{{ url_for('contacto') }}">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <label for="nombre" class="form-label fw-bold">Nombre Completo *</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-primary bg-opacity-10 border-primary">
+                                            <i class="fas fa-user text-primary"></i>
+                                        </span>
+                                        <input type="text" class="form-control border-primary" id="nombre" name="nombre" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label fw-bold">Correo Electrónico *</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-primary bg-opacity-10 border-primary">
+                                            <i class="fas fa-envelope text-primary"></i>
+                                        </span>
+                                        <input type="email" class="form-control border-primary" id="email" name="email" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <label for="asunto" class="form-label fw-bold">Asunto</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-primary bg-opacity-10 border-primary">
+                                            <i class="fas fa-tag text-primary"></i>
+                                        </span>
+                                        <select class="form-select border-primary" id="asunto" name="asunto">
+                                            <option value="">Selecciona un asunto</option>
+                                            <option value="consulta-general">Consulta General</option>
+                                            <option value="informacion-eventos">Información sobre Eventos</option>
+                                            <option value="contribuir-contenido">Contribuir con Contenido</option>
+                                            <option value="soporte-tecnico">Soporte Técnico</option>
+                                            <option value="colaboracion">Colaboración</option>
+                                            <option value="donacion">Donación</option>
+                                            <option value="otro">Otro</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <label for="mensaje" class="form-label fw-bold">Mensaje *</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-primary bg-opacity-10 border-primary align-items-start pt-3">
+                                            <i class="fas fa-comment text-primary"></i>
+                                        </span>
+                                        <textarea class="form-control border-primary" id="mensaje" name="mensaje" rows="6" required placeholder="Cuéntanos cómo podemos ayudarte..."></textarea>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter" value="1">
+                                        <label class="form-check-label" for="newsletter">
+                                            Quiero recibir el boletín informativo con artículos y eventos
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="privacy" name="privacy" value="1" required>
+                                        <label class="form-check-label" for="privacy">
+                                            Acepto la <a href="#" target="_blank" class="text-primary">política de privacidad</a> y el tratamiento de mis datos *
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-primary btn-lg px-5">
+                                        <i class="fas fa-paper-plane me-2"></i> Enviar Mensaje
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-5 bg-gradient-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-gradient mb-4">Preguntas Frecuentes</h2>
+            <p class="lead text-muted">Encuentra respuestas a las preguntas más comunes sobre nuestro proyecto</p>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item border-0 shadow-soft mb-3">
+                        <h2 class="accordion-header" id="faq1">
+                            <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                <i class="fas fa-graduation-cap text-primary me-3"></i>
+                                ¿Cómo puedo aprender canto gregoriano?
+                            </button>
+                        </h2>
+                        <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p class="mb-0">Ofrecemos recursos educativos en nuestra biblioteca, incluyendo grabaciones, partituras y artículos. También organizamos talleres y clases regulares. Contacta con nosotros para más información sobre las próximas actividades formativas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 shadow-soft mb-3">
+                        <h2 class="accordion-header" id="faq2">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                <i class="fas fa-share-alt text-primary me-3"></i>
+                                ¿Puedo contribuir con grabaciones o partituras?
+                            </button>
+                        </h2>
+                        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p class="mb-0">¡Por supuesto! Valoramos las contribuciones de nuestra comunidad. Si tienes grabaciones, partituras o recursos que te gustaría compartir, contáctanos y te ayudaremos a incluirlos en nuestra biblioteca.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 shadow-soft mb-3">
+                        <h2 class="accordion-header" id="faq3">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                <i class="fas fa-calendar-check text-primary me-3"></i>
+                                ¿Cómo puedo participar en los eventos?
+                            </button>
+                        </h2>
+                        <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p class="mb-0">La mayoría de nuestros eventos son abiertos al público. Consulta nuestra sección de eventos para ver las próximas actividades. Para eventos que requieren inscripción, encontrarás la información de contacto en cada evento.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 shadow-soft mb-3">
+                        <h2 class="accordion-header" id="faq4">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                <i class="fas fa-heart text-primary me-3"></i>
+                                ¿Ofrecen servicios de donación?
+                            </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p class="mb-0">Sí, aceptamos donaciones para mantener y expandir nuestros recursos. Las donaciones nos ayudan a adquirir nuevas grabaciones, organizar eventos y mantener la plataforma. Contacta con nosotros para más información sobre cómo contribuir.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Support Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="display-5 fw-bold text-gradient mb-4">Apoya Nuestro Proyecto</h2>
+                <p class="lead text-muted mb-4">El canto gregoriano es un patrimonio cultural invaluable que merece ser preservado y compartido. Tu apoyo nos ayuda a:</p>
+                
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                                <i class="fas fa-database text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Biblioteca Digital</h6>
+                                <p class="text-muted small mb-0">Mantener y expandir nuestra colección</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                                <i class="fas fa-calendar-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Eventos Educativos</h6>
+                                <p class="text-muted small mb-0">Organizar talleres y actividades</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                                <i class="fas fa-music text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Nuevas Grabaciones</h6>
+                                <p class="text-muted small mb-0">Adquirir partituras y recursos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                                <i class="fas fa-laptop text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Plataforma Web</h6>
+                                <p class="text-muted small mb-0">Mantener y mejorar el sitio</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card border-0 shadow-soft">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-3">Opciones de Donación</h5>
+                        <div class="row g-2 mb-3">
+                            <div class="col-6 col-md-3">
+                                <button class="btn btn-outline-primary w-100 donation-btn" data-amount="10">$10</button>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <button class="btn btn-outline-primary w-100 donation-btn" data-amount="25">$25</button>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <button class="btn btn-outline-primary w-100 donation-btn" data-amount="50">$50</button>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <button class="btn btn-outline-primary w-100 donation-btn" data-amount="100">$100</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-100">
+                            <i class="fas fa-heart me-2"></i> Hacer una Donación
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 text-center">
+                <div class="bg-gradient-primary text-white rounded-3 p-5">
+                    <i class="fas fa-hands-helping display-1 mb-3"></i>
+                    <h4 class="fw-bold mb-3">Tu apoyo hace la diferencia</h4>
+                    <p class="mb-0">Cada contribución nos ayuda a preservar y difundir esta hermosa tradición musical para las generaciones futuras.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Support Help Section -->
+<section class="py-5 bg-gradient-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-gradient mb-4">¿Necesitas Ayuda?</h2>
+            <p class="lead text-muted">Si tienes problemas técnicos con el sitio web o necesitas asistencia específica, nuestro equipo de soporte está aquí para ayudarte.</p>
+        </div>
+        
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-soft h-100 text-center hover-lift">
+                    <div class="card-body p-4">
+                        <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <i class="fas fa-envelope text-primary fs-2"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Soporte por Email</h5>
+                        <p class="text-muted mb-3">Envía un email detallado y te responderemos en 24-48 horas.</p>
+                        <a href="mailto:soporte@cantogregoriano.org" class="btn btn-outline-primary">
+                            <i class="fas fa-envelope me-2"></i> Enviar Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-soft h-100 text-center hover-lift">
+                    <div class="card-body p-4">
+                        <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <i class="fab fa-whatsapp text-success fs-2"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Chat de WhatsApp</h5>
+                        <p class="text-muted mb-3">Conversación directa y respuesta inmediata durante horario laboral.</p>
+                        <a href="https://wa.me/15551234567" class="btn btn-outline-success" target="_blank">
+                            <i class="fab fa-whatsapp me-2"></i> Chatear Ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-soft h-100 text-center hover-lift">
+                    <div class="card-body p-4">
+                        <div class="bg-info bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <i class="fas fa-question-circle text-info fs-2"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Centro de Ayuda</h5>
+                        <p class="text-muted mb-3">Encuentra respuestas rápidas en nuestra base de conocimientos.</p>
+                        <a href="#" class="btn btn-outline-info">
+                            <i class="fas fa-question-circle me-2"></i> Ver Ayuda
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+$(document).ready(function() {
+    // Donation button functionality
+    $('.donation-btn').on('click', function() {
+        $('.donation-btn').removeClass('btn-primary').addClass('btn-outline-primary');
+        $(this).removeClass('btn-outline-primary').addClass('btn-primary');
+        
+        var amount = $(this).data('amount');
+        if (amount) {
+            console.log('Donation amount selected: $' + amount);
+            // Here you would typically redirect to payment processor
+        }
+    });
+    
+    // Form validation with Bootstrap classes
+    $('form').on('submit', function(e) {
+        var isValid = true;
+        var requiredFields = $(this).find('[required]');
+        
+        requiredFields.each(function() {
+            if (!$(this).val().trim()) {
+                $(this).addClass('is-invalid');
+                isValid = false;
+            } else {
+                $(this).removeClass('is-invalid').addClass('is-valid');
+            }
+        });
+        
+        // Email validation
+        var email = $('#email').val();
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email && !emailRegex.test(email)) {
+            $('#email').addClass('is-invalid');
+            isValid = false;
+        } else if (email) {
+            $('#email').removeClass('is-invalid').addClass('is-valid');
+        }
+        
+        if (!isValid) {
+            e.preventDefault();
+            // Show Bootstrap alert
+            var alertHtml = `
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i class="fas fa-exclamation-circle me-2"></i>
+                    Por favor, completa todos los campos requeridos correctamente.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            `;
+            $('form').prepend(alertHtml);
+        }
+    });
+    
+    // Remove validation classes on input
+    $('input, textarea, select').on('input change', function() {
+        $(this).removeClass('is-invalid is-valid');
+    });
+    
+    // Smooth scroll for anchor links
+    $('a[href^="#"]').on('click', function(e) {
+        e.preventDefault();
+        var target = $(this.getAttribute('href'));
+        if (target.length) {
+            $('html, body').animate({
+                scrollTop: target.offset().top - 100
+            }, 1000);
+        }
+    });
+    
+    // Add loading state to submit button
+    $('form').on('submit', function() {
+        var submitBtn = $(this).find('button[type="submit"]');
+        var originalText = submitBtn.html();
+        submitBtn.html('<i class="fas fa-spinner fa-spin me-2"></i> Enviando...').prop('disabled', true);
+        
+        // Re-enable button after 3 seconds (in case of error)
+        setTimeout(function() {
+            submitBtn.html(originalText).prop('disabled', false);
+        }, 3000);
+    });
+});
+</script>
+{% endblock %}

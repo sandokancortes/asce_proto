@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+
+{% block title %}{{ articulo.titulo }} - Blog Canto Gregoriano{% endblock %}
+
+{% block content %}
+<!-- Article Header -->
+<section class="article-header">
+    <div class="container">
+        <div class="article-breadcrumb">
+            <a href="{{ url_for('blog') }}">Blog</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>{{ articulo.titulo }}</span>
+        </div>
+        
+        <div class="article-title-section">
+            <h1>{{ articulo.titulo }}</h1>
+            <div class="article-meta">
+                <div class="meta-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>{{ articulo.fecha_publicacion[:10] }}</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-user"></i>
+                    <span>{{ articulo.autor }}</span>
+                </div>
+                {% if articulo.categoria %}
+                <div class="meta-item">
+                    <i class="fas fa-tag"></i>
+                    <span class="category-tag">{{ articulo.categoria }}</span>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Article Content -->
+<section class="article-content">
+    <div class="container">
+        <div class="article-body">
+            <div class="article-text">
+                {{ articulo.contenido|replace('\n', '<br>')|safe }}
+            </div>
+        </div>
+        
+        <!-- Article Footer -->
+        <div class="article-footer">
+            <div class="article-actions">
+                <button class="btn btn-outline" onclick="shareArticle()">
+                    <i class="fas fa-share"></i> Compartir
+                </button>
+                <button class="btn btn-outline" onclick="printArticle()">
+                    <i class="fas fa-print"></i> Imprimir
+                </button>
+            </div>
+            
+            <div class="article-tags">
+                <h4>Etiquetas:</h4>
+                <div class="tags">
+                    <span class="tag">Canto Gregoriano</span>
+                    {% if articulo.categoria %}
+                    <span class="tag">{{ articulo.categoria }}</span>
+                    {% endif %}
+                    <span class="tag">Música Sacra</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Related Articles -->
+<section class="related-articles">
+    <div class="container">
+        <h2>Artículos Relacionados</h2>
+        <div class="related-grid">
+            <!-- Placeholder for related articles -->
+            <article class="related-card">
+                <h3><a href="#">La Importancia de la Respiración en el Canto Gregoriano</a></h3>
+                <p class="related-meta">15 de Marzo, 2024</p>
+                <p>Técnicas fundamentales para una correcta interpretación del canto gregoriano...</p>
+            </article>
+            
+            <article class="related-card">
+                <h3><a href="#">Los Modos Eclesiásticos: Una Guía Completa</a></h3>
+                <p class="related-meta">8 de Marzo, 2024</p>
+                <p>Exploración detallada de los ocho modos utilizados en el canto gregoriano...</p>
+            </article>
+            
+            <article class="related-card">
+                <h3><a href="#">El Canto Gregoriano en la Liturgia Moderna</a></h3>
+                <p class="related-meta">1 de Marzo, 2024</p>
+                <p>Reflexiones sobre el papel del canto gregoriano en las celebraciones actuales...</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- Comments Section -->
+<section class="comments-section">
+    <div class="container">
+        <h2>Comentarios</h2>
+        <div class="comments-container">
+            <div class="no-comments">
+                <i class="fas fa-comments"></i>
+                <p>Los comentarios están deshabilitados temporalmente. Si tienes preguntas o comentarios sobre este artículo, por favor contáctanos.</p>
+                <a href="{{ url_for('contacto') }}" class="btn btn-outline">
+                    <i class="fas fa-envelope"></i> Contactar
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Navigation -->
+<section class="article-navigation">
+    <div class="container">
+        <div class="nav-links">
+            <a href="{{ url_for('blog') }}" class="nav-link prev">
+                <i class="fas fa-arrow-left"></i>
+                <span>Volver al Blog</span>
+            </a>
+            <a href="{{ url_for('biblioteca') }}" class="nav-link next">
+                <span>Explorar Biblioteca</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+function shareArticle() {
+    if (navigator.share) {
+        navigator.share({
+            title: '{{ articulo.titulo }}',
+            text: 'Lee este interesante artículo sobre canto gregoriano',
+            url: window.location.href
+        });
+    } else {
+        // Fallback: copy to clipboard
+        navigator.clipboard.writeText(window.location.href).then(function() {
+            alert('Enlace copiado al portapapeles');
+        });
+    }
+}
+
+function printArticle() {
+    window.print();
+}
+
+// Add print styles
+$(document).ready(function() {
+    $('<style>')
+        .prop('type', 'text/css')
+        .html(`
+            @media print {
+                .header, .footer, .article-actions, .related-articles, .comments-section, .article-navigation {
+                    display: none !important;
+                }
+                .article-content {
+                    margin: 0 !important;
+                    padding: 0 !important;
+                }
+                .article-title-section h1 {
+                    color: #000 !important;
+                    font-size: 24pt !important;
+                }
+                .article-meta {
+                    margin-bottom: 20pt !important;
+                }
+                .article-text {
+                    font-size: 12pt !important;
+                    line-height: 1.5 !important;
+                }
+            }
+        `)
+        .appendTo('head');
+});
+</script>
+{% endblock %}
