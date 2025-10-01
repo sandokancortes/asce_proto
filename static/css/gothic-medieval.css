@@ -1,0 +1,1132 @@
+/* ========================================
+   GOTHIC MEDIEVAL DESIGN SYSTEM
+   ======================================== */
+
+/* CSS Variables for Gothic Theme */
+:root {
+    /* Gothic Color Palette */
+    --gothic-primary: #1a1a1a;
+    --gothic-secondary: #2d2d2d;
+    --gothic-accent: #8b0000;
+    --gothic-gold: #d4af37;
+    --gothic-silver: #c0c0c0;
+    --gothic-ivory: #f5f5dc;
+    --gothic-crimson: #dc143c;
+    --gothic-deep-red: #660000;
+    --gothic-shadow: rgba(0, 0, 0, 0.8);
+    --gothic-light: #f8f8f8;
+    
+    /* Gothic Typography */
+    --gothic-font-title: 'UnifrakturMaguntia', cursive;
+    --gothic-font-heading: 'Cinzel', serif;
+    --gothic-font-body: 'Crimson Text', serif;
+    --gothic-font-decorative: 'MedievalSharp', cursive;
+    
+    /* Gothic Spacing */
+    --gothic-spacing-xs: 0.25rem;
+    --gothic-spacing-sm: 0.5rem;
+    --gothic-spacing-md: 1rem;
+    --gothic-spacing-lg: 1.5rem;
+    --gothic-spacing-xl: 2rem;
+    --gothic-spacing-xxl: 3rem;
+    
+    /* Gothic Effects */
+    --gothic-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --gothic-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --gothic-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+    --gothic-border-radius: 8px;
+    --gothic-border-radius-lg: 16px;
+}
+
+/* ========================================
+   GLOBAL STYLES
+   ======================================== */
+
+body {
+    font-family: var(--gothic-font-body);
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #2d2d2d 100%);
+    color: var(--gothic-ivory);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Gothic Background Pattern */
+.gothic-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(139, 0, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(220, 20, 60, 0.05) 0%, transparent 50%);
+    background-size: 100% 100%, 100% 100%, 100% 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.gothic-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 2px,
+            rgba(139, 0, 0, 0.03) 2px,
+            rgba(139, 0, 0, 0.03) 4px
+        );
+    z-index: 1;
+}
+
+/* ========================================
+   GOTHIC NAVBAR
+   ======================================== */
+
+.gothic-navbar {
+    background: linear-gradient(135deg, 
+        var(--gothic-primary) 0%, 
+        var(--gothic-secondary) 50%, 
+        var(--gothic-primary) 100%);
+    border-bottom: 3px solid var(--gothic-gold);
+    box-shadow: var(--gothic-shadow-lg);
+    backdrop-filter: blur(10px);
+    padding: var(--gothic-spacing-md) 0;
+    position: relative;
+}
+
+.gothic-navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--gothic-gold) 20%, 
+        var(--gothic-crimson) 50%, 
+        var(--gothic-gold) 80%, 
+        transparent 100%);
+}
+
+.gothic-brand {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.gothic-brand:hover {
+    transform: scale(1.05);
+}
+
+.gothic-logo {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--gothic-gold) 0%, var(--gothic-crimson) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--gothic-primary);
+    box-shadow: var(--gothic-shadow-md);
+    position: relative;
+    border: 2px solid var(--gothic-gold);
+}
+
+.gothic-logo::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--gothic-gold), var(--gothic-crimson), var(--gothic-gold));
+    border-radius: 50%;
+    z-index: -1;
+    animation: gothic-glow 3s ease-in-out infinite;
+}
+
+@keyframes gothic-glow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.gothic-brand-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: var(--gothic-spacing-sm);
+}
+
+.gothic-title {
+    font-family: var(--gothic-font-title);
+    font-size: 1.8rem;
+    color: var(--gothic-gold);
+    text-shadow: 2px 2px 4px var(--gothic-shadow);
+    line-height: 1;
+    margin-bottom: 2px;
+}
+
+.gothic-subtitle {
+    font-family: var(--gothic-font-decorative);
+    font-size: 0.7rem;
+    color: var(--gothic-silver);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* ========================================
+   GOTHIC NAVIGATION
+   ======================================== */
+
+.gothic-nav {
+    gap: var(--gothic-spacing-sm);
+}
+
+.gothic-nav-link {
+    position: relative;
+    padding: var(--gothic-spacing-sm) var(--gothic-spacing-md);
+    color: var(--gothic-ivory);
+    text-decoration: none;
+    border-radius: var(--gothic-border-radius);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid transparent;
+}
+
+.gothic-nav-link:hover {
+    color: var(--gothic-gold);
+    background: rgba(139, 0, 0, 0.2);
+    border-color: var(--gothic-gold);
+    transform: translateY(-2px);
+    box-shadow: var(--gothic-shadow-md);
+}
+
+.gothic-nav-link.active {
+    color: var(--gothic-gold);
+    background: linear-gradient(135deg, 
+        rgba(139, 0, 0, 0.3) 0%, 
+        rgba(212, 175, 55, 0.1) 100%);
+    border-color: var(--gothic-gold);
+    box-shadow: var(--gothic-shadow-md);
+}
+
+.gothic-nav-link i {
+    font-size: 1.2rem;
+    margin-bottom: var(--gothic-spacing-xs);
+}
+
+.nav-text {
+    font-family: var(--gothic-font-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-latin {
+    font-family: var(--gothic-font-decorative);
+    font-size: 0.7rem;
+    color: var(--gothic-silver);
+    opacity: 0.7;
+    font-style: italic;
+}
+
+/* ========================================
+   GOTHIC MAIN CONTENT
+   ======================================== */
+
+.gothic-main {
+    position: relative;
+    z-index: 1;
+}
+
+/* Gothic Container */
+.gothic-container {
+    background: rgba(26, 26, 26, 0.9);
+    border: 2px solid var(--gothic-gold);
+    border-radius: var(--gothic-border-radius-lg);
+    box-shadow: var(--gothic-shadow-lg);
+    padding: var(--gothic-spacing-xl);
+    margin: var(--gothic-spacing-lg) 0;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.gothic-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        var(--gothic-gold), 
+        var(--gothic-crimson), 
+        var(--gothic-gold), 
+        var(--gothic-crimson));
+    border-radius: var(--gothic-border-radius-lg);
+    z-index: -1;
+    opacity: 0.3;
+}
+
+/* ========================================
+   GOTHIC TYPOGRAPHY
+   ======================================== */
+
+.gothic-title-main {
+    font-family: var(--gothic-font-title);
+    font-size: 3.5rem;
+    color: var(--gothic-gold);
+    text-align: center;
+    text-shadow: 3px 3px 6px var(--gothic-shadow);
+    margin-bottom: var(--gothic-spacing-lg);
+    position: relative;
+}
+
+.gothic-title-main::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--gothic-gold) 20%, 
+        var(--gothic-crimson) 50%, 
+        var(--gothic-gold) 80%, 
+        transparent 100%);
+    border-radius: 2px;
+}
+
+.gothic-subtitle {
+    font-family: var(--gothic-font-heading);
+    font-size: 1.5rem;
+    color: var(--gothic-silver);
+    text-align: center;
+    margin-bottom: var(--gothic-spacing-xl);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.gothic-heading {
+    font-family: var(--gothic-font-heading);
+    color: var(--gothic-gold);
+    text-shadow: 2px 2px 4px var(--gothic-shadow);
+    position: relative;
+    padding-left: var(--gothic-spacing-lg);
+}
+
+.gothic-heading::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 30px;
+    background: linear-gradient(180deg, 
+        var(--gothic-gold) 0%, 
+        var(--gothic-crimson) 100%);
+    border-radius: 2px;
+}
+
+/* ========================================
+   GOTHIC CARDS
+   ======================================== */
+
+.gothic-card {
+    background: linear-gradient(135deg, 
+        rgba(26, 26, 26, 0.9) 0%, 
+        rgba(45, 45, 45, 0.8) 100%);
+    border: 2px solid var(--gothic-gold);
+    border-radius: var(--gothic-border-radius-lg);
+    box-shadow: var(--gothic-shadow-md);
+    padding: var(--gothic-spacing-xl);
+    margin-bottom: var(--gothic-spacing-lg);
+    position: relative;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.gothic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--gothic-shadow-lg);
+    border-color: var(--gothic-crimson);
+}
+
+.gothic-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        var(--gothic-gold), 
+        var(--gothic-crimson), 
+        var(--gothic-gold));
+    border-radius: var(--gothic-border-radius-lg);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gothic-card:hover::before {
+    opacity: 0.3;
+}
+
+.gothic-card-header {
+    border-bottom: 2px solid var(--gothic-gold);
+    padding-bottom: var(--gothic-spacing-md);
+    margin-bottom: var(--gothic-spacing-md);
+}
+
+.gothic-card-title {
+    font-family: var(--gothic-font-heading);
+    color: var(--gothic-gold);
+    font-size: 1.5rem;
+    margin: 0;
+    text-shadow: 1px 1px 2px var(--gothic-shadow);
+}
+
+/* ========================================
+   GOTHIC BUTTONS
+   ======================================== */
+
+.gothic-btn {
+    font-family: var(--gothic-font-heading);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: var(--gothic-spacing-md) var(--gothic-spacing-xl);
+    border: 2px solid var(--gothic-gold);
+    border-radius: var(--gothic-border-radius);
+    background: linear-gradient(135deg, 
+        rgba(139, 0, 0, 0.8) 0%, 
+        rgba(26, 26, 26, 0.9) 100%);
+    color: var(--gothic-ivory);
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--gothic-shadow-sm);
+}
+
+.gothic-btn:hover {
+    color: var(--gothic-gold);
+    background: linear-gradient(135deg, 
+        rgba(212, 175, 55, 0.2) 0%, 
+        rgba(139, 0, 0, 0.8) 100%);
+    transform: translateY(-2px);
+    box-shadow: var(--gothic-shadow-md);
+    border-color: var(--gothic-crimson);
+}
+
+.gothic-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(212, 175, 55, 0.3), 
+        transparent);
+    transition: left 0.5s ease;
+}
+
+.gothic-btn:hover::before {
+    left: 100%;
+}
+
+.gothic-btn-primary {
+    background: linear-gradient(135deg, 
+        var(--gothic-gold) 0%, 
+        var(--gothic-crimson) 100%);
+    color: var(--gothic-primary);
+    border-color: var(--gothic-gold);
+}
+
+.gothic-btn-primary:hover {
+    background: linear-gradient(135deg, 
+        var(--gothic-crimson) 0%, 
+        var(--gothic-gold) 100%);
+    color: var(--gothic-ivory);
+}
+
+/* ========================================
+   GOTHIC FORMS
+   ======================================== */
+
+.gothic-form-control {
+    background: rgba(26, 26, 26, 0.8);
+    border: 2px solid var(--gothic-gold);
+    border-radius: var(--gothic-border-radius);
+    color: var(--gothic-ivory);
+    padding: var(--gothic-spacing-md);
+    font-family: var(--gothic-font-body);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.gothic-form-control:focus {
+    background: rgba(26, 26, 26, 0.9);
+    border-color: var(--gothic-crimson);
+    box-shadow: 0 0 0 0.2rem rgba(139, 0, 0, 0.25);
+    color: var(--gothic-ivory);
+}
+
+.gothic-form-control::placeholder {
+    color: var(--gothic-silver);
+    opacity: 0.7;
+}
+
+.gothic-form-label {
+    font-family: var(--gothic-font-heading);
+    color: var(--gothic-gold);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--gothic-spacing-sm);
+}
+
+/* ========================================
+   GOTHIC DECORATIVE ELEMENTS
+   ======================================== */
+
+.gothic-divider {
+    height: 3px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--gothic-gold) 20%, 
+        var(--gothic-crimson) 50%, 
+        var(--gothic-gold) 80%, 
+        transparent 100%);
+    border-radius: 2px;
+    margin: var(--gothic-spacing-xl) 0;
+}
+
+.gothic-ornament {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--gothic-gold);
+    margin: var(--gothic-spacing-lg) 0;
+    text-shadow: 2px 2px 4px var(--gothic-shadow);
+}
+
+.gothic-ornament::before,
+.gothic-ornament::after {
+    content: '❦';
+    margin: 0 var(--gothic-spacing-md);
+    opacity: 0.7;
+}
+
+/* ========================================
+   GOTHIC RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+    .gothic-title-main {
+        font-size: 2.5rem;
+    }
+    
+    .gothic-nav-link {
+        min-width: 60px;
+        padding: var(--gothic-spacing-sm);
+    }
+    
+    .nav-text {
+        font-size: 0.8rem;
+    }
+    
+    .nav-latin {
+        font-size: 0.6rem;
+    }
+    
+    .gothic-container {
+        padding: var(--gothic-spacing-lg);
+        margin: var(--gothic-spacing-md) 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .gothic-title-main {
+        font-size: 2rem;
+    }
+    
+    .gothic-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .gothic-nav {
+        flex-direction: column;
+        gap: var(--gothic-spacing-xs);
+    }
+    
+    .gothic-nav-link {
+        flex-direction: row;
+        justify-content: flex-start;
+        min-width: auto;
+    }
+    
+    .gothic-nav-link i {
+        margin-bottom: 0;
+        margin-right: var(--gothic-spacing-sm);
+    }
+}
+
+/* ========================================
+   GOTHIC ANIMATIONS
+   ======================================== */
+
+@keyframes gothic-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gothic-slide-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes gothic-slide-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.gothic-animate-fade-in {
+    animation: gothic-fade-in 0.8s ease-out;
+}
+
+.gothic-animate-slide-left {
+    animation: gothic-slide-in-left 0.8s ease-out;
+}
+
+.gothic-animate-slide-right {
+    animation: gothic-slide-in-right 0.8s ease-out;
+}
+
+/* ========================================
+   GOTHIC FOOTER
+   ======================================== */
+
+.gothic-footer {
+    background: linear-gradient(135deg, 
+        var(--gothic-primary) 0%, 
+        var(--gothic-secondary) 50%, 
+        var(--gothic-primary) 100%);
+    color: var(--gothic-ivory);
+    position: relative;
+    overflow: hidden;
+    margin-top: var(--gothic-spacing-xxl);
+    padding: var(--gothic-spacing-lg) 0;
+}
+
+.gothic-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--gothic-gold) 20%, 
+        var(--gothic-crimson) 50%, 
+        var(--gothic-gold) 80%, 
+        transparent 100%);
+}
+
+.gothic-footer-border {
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--gothic-gold) 20%, 
+        var(--gothic-crimson) 50%, 
+        var(--gothic-gold) 80%, 
+        transparent 100%);
+    margin: var(--gothic-spacing-lg) 0;
+    border-radius: 1px;
+}
+
+/* Gothic Footer Brand */
+.gothic-footer-brand {
+    position: relative;
+}
+
+.gothic-footer-logo {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--gothic-gold) 0%, var(--gothic-crimson) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--gothic-primary);
+    box-shadow: var(--gothic-shadow-md);
+    border: 2px solid var(--gothic-gold);
+    position: relative;
+}
+
+.gothic-footer-logo::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--gothic-gold), var(--gothic-crimson), var(--gothic-gold));
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.gothic-footer-brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.gothic-footer-title {
+    font-family: var(--gothic-font-heading);
+    font-size: 1.5rem;
+    color: var(--gothic-gold);
+    text-shadow: 2px 2px 4px var(--gothic-shadow);
+    line-height: 1;
+    margin-bottom: 2px;
+}
+
+.gothic-footer-subtitle {
+    font-family: var(--gothic-font-decorative);
+    font-size: 0.7rem;
+    color: var(--gothic-silver);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.gothic-footer-description {
+    color: var(--gothic-silver);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* Gothic Social Links */
+.gothic-social-links {
+    margin-top: var(--gothic-spacing-lg);
+}
+
+.gothic-social-title {
+    font-family: var(--gothic-font-heading);
+    color: var(--gothic-gold);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--gothic-spacing-md);
+}
+
+.gothic-social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--gothic-gold);
+}
+
+.gothic-social-facebook {
+    background: linear-gradient(135deg, #1877f2 0%, #0d5bb8 100%);
+    color: white;
+}
+
+.gothic-social-twitter {
+    background: linear-gradient(135deg, #1da1f2 0%, #0d7bb8 100%);
+    color: white;
+}
+
+.gothic-social-youtube {
+    background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+    color: white;
+}
+
+.gothic-social-instagram {
+    background: linear-gradient(135deg, #e4405f 0%, #c13584 100%);
+    color: white;
+}
+
+.gothic-social-whatsapp {
+    background: linear-gradient(135deg, #25d366 0%, #1da851 100%);
+    color: white;
+}
+
+.gothic-social-link:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--gothic-shadow-lg);
+    border-color: var(--gothic-crimson);
+}
+
+.gothic-social-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.gothic-social-link:hover::before {
+    left: 100%;
+}
+
+/* Gothic Footer Sections */
+.gothic-footer-section {
+    position: relative;
+}
+
+.gothic-footer-section-title {
+    font-family: var(--gothic-font-heading);
+    color: var(--gothic-gold);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: var(--gothic-spacing-lg);
+    position: relative;
+    padding-bottom: var(--gothic-spacing-sm);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.gothic-footer-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gothic-gold) 0%, var(--gothic-crimson) 100%);
+    border-radius: 1px;
+}
+
+.gothic-footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.gothic-footer-links li {
+    margin-bottom: var(--gothic-spacing-sm);
+}
+
+.gothic-footer-link {
+    color: var(--gothic-silver);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    padding: var(--gothic-spacing-xs) 0;
+    position: relative;
+}
+
+.gothic-footer-link:hover {
+    color: var(--gothic-gold);
+    transform: translateX(5px);
+}
+
+.gothic-footer-link i {
+    width: 16px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.gothic-footer-link:hover i {
+    opacity: 1;
+}
+
+/* Gothic Contact Info */
+.gothic-contact-info {
+    margin-bottom: var(--gothic-spacing-lg);
+}
+
+.gothic-contact-item {
+    display: flex;
+    align-items: center;
+    gap: var(--gothic-spacing-md);
+    margin-bottom: var(--gothic-spacing-md);
+}
+
+.gothic-contact-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(139, 0, 0, 0.2);
+    border: 2px solid var(--gothic-gold);
+    border-radius: var(--gothic-border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gothic-gold);
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.gothic-contact-item:hover .gothic-contact-icon {
+    background: rgba(139, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.gothic-contact-details {
+    flex: 1;
+}
+
+.gothic-contact-label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--gothic-silver);
+    margin-bottom: var(--gothic-spacing-xs);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.gothic-contact-value {
+    color: var(--gothic-ivory);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.gothic-contact-value:hover {
+    color: var(--gothic-gold);
+}
+
+/* Gothic Newsletter */
+.gothic-newsletter-signup {
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--gothic-gold);
+    border-radius: var(--gothic-border-radius-lg);
+    padding: var(--gothic-spacing-lg);
+    backdrop-filter: blur(10px);
+}
+
+.gothic-newsletter-title {
+    font-family: var(--gothic-font-heading);
+    color: var(--gothic-gold);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--gothic-spacing-md);
+}
+
+.gothic-input-group {
+    display: flex;
+    border-radius: var(--gothic-border-radius);
+    overflow: hidden;
+    box-shadow: var(--gothic-shadow-sm);
+}
+
+.gothic-newsletter-input {
+    flex: 1;
+    background: rgba(26, 26, 26, 0.8);
+    border: 2px solid var(--gothic-gold);
+    border-right: none;
+    color: var(--gothic-ivory);
+    padding: var(--gothic-spacing-md);
+    font-family: var(--gothic-font-body);
+    transition: all 0.3s ease;
+}
+
+.gothic-newsletter-input:focus {
+    background: rgba(26, 26, 26, 0.9);
+    border-color: var(--gothic-crimson);
+    box-shadow: 0 0 0 0.2rem rgba(139, 0, 0, 0.25);
+    color: var(--gothic-ivory);
+    outline: none;
+}
+
+.gothic-newsletter-input::placeholder {
+    color: var(--gothic-silver);
+    opacity: 0.7;
+}
+
+.gothic-newsletter-btn {
+    background: linear-gradient(135deg, var(--gothic-gold) 0%, var(--gothic-crimson) 100%);
+    border: 2px solid var(--gothic-gold);
+    border-left: none;
+    color: var(--gothic-primary);
+    padding: var(--gothic-spacing-md) var(--gothic-spacing-lg);
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.gothic-newsletter-btn:hover {
+    background: linear-gradient(135deg, var(--gothic-crimson) 0%, var(--gothic-gold) 100%);
+    color: var(--gothic-ivory);
+    transform: translateY(-1px);
+    box-shadow: var(--gothic-shadow-md);
+}
+
+/* Gothic Footer Bottom */
+.gothic-footer-bottom {
+    border-top: 2px solid var(--gothic-gold);
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    position: relative;
+    margin-top: var(--gothic-spacing-lg);
+}
+
+.gothic-footer-divider {
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--gothic-gold) 20%, 
+        var(--gothic-crimson) 50%, 
+        var(--gothic-gold) 80%, 
+        transparent 100%);
+    margin: var(--gothic-spacing-md) 0;
+}
+
+.gothic-copyright {
+    color: var(--gothic-silver);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.gothic-footer-legal {
+    display: flex;
+    gap: var(--gothic-spacing-md);
+    flex-wrap: wrap;
+}
+
+.gothic-legal-link {
+    color: var(--gothic-silver);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+    position: relative;
+    opacity: 0.8;
+}
+
+.gothic-legal-link:hover {
+    color: var(--gothic-gold);
+    opacity: 1;
+}
+
+.gothic-legal-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gothic-gold);
+    transition: width 0.3s ease;
+}
+
+.gothic-legal-link:hover::after {
+    width: 100%;
+}
+
+/* Gothic Footer Responsive */
+@media (max-width: 768px) {
+    .gothic-footer {
+        text-align: center;
+        padding: var(--gothic-spacing-md) 0;
+    }
+    
+    .gothic-footer-brand .d-flex {
+        justify-content: center;
+    }
+    
+    .gothic-social-links .d-flex {
+        justify-content: center;
+    }
+    
+    .gothic-footer-bottom .row {
+        text-align: center;
+    }
+    
+    .gothic-footer-legal {
+        justify-content: center;
+        margin-top: var(--gothic-spacing-sm);
+        flex-wrap: wrap;
+        gap: var(--gothic-spacing-sm);
+    }
+    
+    .gothic-footer-legal .gothic-legal-link {
+        margin: 0;
+    }
+}
+
+/* ========================================
+   GOTHIC UTILITIES
+   ======================================== */
+
+.gothic-text-gold {
+    color: var(--gothic-gold);
+}
+
+.gothic-text-crimson {
+    color: var(--gothic-crimson);
+}
+
+.gothic-text-silver {
+    color: var(--gothic-silver);
+}
+
+.gothic-bg-dark {
+    background: var(--gothic-primary);
+}
+
+.gothic-bg-darker {
+    background: var(--gothic-secondary);
+}
+
+.gothic-shadow {
+    box-shadow: var(--gothic-shadow-md);
+}
+
+.gothic-shadow-lg {
+    box-shadow: var(--gothic-shadow-lg);
+}

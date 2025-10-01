@@ -1,0 +1,991 @@
+/* ========================================
+   VERBUM GLORIAE INSPIRED DESIGN SYSTEM
+   ======================================== */
+
+/* CSS Variables inspired by Verbum Gloriae */
+:root {
+    /* Verbum Gloriae Color Palette */
+    --vg-primary: #000000;
+    --vg-secondary: #8B0000;
+    --vg-accent: #DAA520;
+    --vg-gold: #B8860B;
+    --vg-cream: #F5F5DC;
+    --vg-white: #FFFFFF;
+    --vg-gray: #666666;
+    --vg-light-gray: #F8F8F8;
+    
+    /* Typography inspired by Verbum Gloriae */
+    --vg-font-primary: 'Crimson Text', serif;
+    --vg-font-heading: 'Playfair Display', serif;
+    --vg-font-decorative: 'UnifrakturMaguntia', cursive;
+    --vg-font-body: 'Crimson Text', serif;
+    
+    /* Spacing System */
+    --vg-spacing-xs: 0.25rem;
+    --vg-spacing-sm: 0.5rem;
+    --vg-spacing-md: 1rem;
+    --vg-spacing-lg: 1.5rem;
+    --vg-spacing-xl: 2rem;
+    --vg-spacing-xxl: 3rem;
+    
+    /* Effects */
+    --vg-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --vg-shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.15);
+    --vg-border-radius: 4px;
+}
+
+/* ========================================
+   GLOBAL STYLES
+   ======================================== */
+
+body {
+    font-family: var(--vg-font-body);
+    background-color: var(--vg-white);
+    color: var(--vg-primary);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* ========================================
+   VERBUM GLORIAE HEADER
+   ======================================== */
+
+.vg-header {
+    background: var(--vg-white);
+    border-bottom: 3px solid var(--vg-secondary);
+    box-shadow: var(--vg-shadow);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: var(--vg-spacing-md) 0;
+}
+
+.vg-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.vg-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--vg-primary);
+}
+
+.vg-logo-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--vg-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--vg-spacing-md);
+    color: var(--vg-white);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.vg-logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.vg-logo-title {
+    font-family: var(--vg-font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--vg-primary);
+    margin: 0;
+    line-height: 1;
+}
+
+.vg-logo-subtitle {
+    font-family: var(--vg-font-primary);
+    font-size: 0.9rem;
+    color: var(--vg-gray);
+    margin: 0;
+    font-style: italic;
+}
+
+/* ========================================
+   VERBUM GLORIAE NAVIGATION
+   ======================================== */
+
+.vg-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--vg-spacing-lg);
+}
+
+.vg-nav-item {
+    position: relative;
+}
+
+.vg-nav-link {
+    color: var(--vg-primary);
+    text-decoration: none;
+    font-family: var(--vg-font-primary);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: var(--vg-spacing-sm) var(--vg-spacing-md);
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.vg-nav-link:hover {
+    color: var(--vg-secondary);
+}
+
+.vg-nav-link.active {
+    color: var(--vg-secondary);
+    font-weight: 600;
+}
+
+.vg-nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 2px;
+    background: var(--vg-secondary);
+}
+
+/* ========================================
+   VERBUM GLORIAE MAIN CONTENT
+   ======================================== */
+
+.vg-main {
+    margin-top: 100px;
+    min-height: calc(100vh - 100px);
+}
+
+/* ========================================
+   VERBUM GLORIAE HERO SECTION
+   ======================================== */
+
+.vg-hero {
+    background: linear-gradient(135deg, var(--vg-light-gray) 0%, var(--vg-white) 100%);
+    padding: var(--vg-spacing-xxl) 0;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.vg-hero-title {
+    font-family: var(--vg-font-heading);
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--vg-primary);
+    margin-bottom: var(--vg-spacing-lg);
+    line-height: 1.2;
+}
+
+.vg-hero-subtitle {
+    font-family: var(--vg-font-primary);
+    font-size: 1.3rem;
+    color: var(--vg-gray);
+    margin-bottom: var(--vg-spacing-xl);
+    font-style: italic;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vg-hero-description {
+    font-family: var(--vg-font-body);
+    font-size: 1.1rem;
+    color: var(--vg-primary);
+    max-width: 900px;
+    margin: 0 auto var(--vg-spacing-xl);
+    line-height: 1.7;
+}
+
+/* ========================================
+   VERBUM GLORIAE SECTIONS
+   ======================================== */
+
+.vg-section {
+    padding: var(--vg-spacing-xxl) 0;
+}
+
+.vg-section-title {
+    font-family: var(--vg-font-heading);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--vg-primary);
+    text-align: center;
+    margin-bottom: var(--vg-spacing-xl);
+    position: relative;
+}
+
+.vg-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--vg-secondary);
+}
+
+.vg-section-subtitle {
+    font-family: var(--vg-font-primary);
+    font-size: 1.2rem;
+    color: var(--vg-gray);
+    text-align: center;
+    margin-bottom: var(--vg-spacing-xl);
+    font-style: italic;
+}
+
+/* ========================================
+   VERBUM GLORIAE CARDS
+   ======================================== */
+
+.vg-card {
+    background: var(--vg-white);
+    border: 1px solid #e0e0e0;
+    border-radius: var(--vg-border-radius);
+    padding: var(--vg-spacing-xl);
+    margin-bottom: var(--vg-spacing-lg);
+    box-shadow: var(--vg-shadow);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.vg-card:hover {
+    box-shadow: var(--vg-shadow-lg);
+    transform: translateY(-2px);
+}
+
+.vg-card-header {
+    border-bottom: 2px solid var(--vg-secondary);
+    padding-bottom: var(--vg-spacing-md);
+    margin-bottom: var(--vg-spacing-lg);
+}
+
+.vg-card-title {
+    font-family: var(--vg-font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--vg-primary);
+    margin: 0;
+}
+
+.vg-card-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--vg-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--vg-white);
+    font-size: 1.5rem;
+    margin: 0 auto var(--vg-spacing-md);
+}
+
+.vg-card-text {
+    font-family: var(--vg-font-body);
+    color: var(--vg-primary);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ========================================
+   VERBUM GLORIAE BUTTONS
+   ======================================== */
+
+.vg-btn {
+    font-family: var(--vg-font-primary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: var(--vg-spacing-md) var(--vg-spacing-xl);
+    border: 2px solid var(--vg-secondary);
+    border-radius: var(--vg-border-radius);
+    background: var(--vg-white);
+    color: var(--vg-secondary);
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.vg-btn:hover {
+    background: var(--vg-secondary);
+    color: var(--vg-white);
+    transform: translateY(-1px);
+    box-shadow: var(--vg-shadow);
+}
+
+.vg-btn-primary {
+    background: var(--vg-secondary);
+    color: var(--vg-white);
+}
+
+.vg-btn-primary:hover {
+    background: var(--vg-primary);
+    border-color: var(--vg-primary);
+}
+
+/* ========================================
+   VERBUM GLORIAE ORNAMENTS
+   ======================================== */
+
+.vg-ornament {
+    text-align: center;
+    margin: var(--vg-spacing-xl) 0;
+    font-size: 2rem;
+    color: var(--vg-secondary);
+}
+
+.vg-ornament::before,
+.vg-ornament::after {
+    content: '❦';
+    margin: 0 var(--vg-spacing-md);
+    opacity: 0.6;
+}
+
+.vg-divider {
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--vg-secondary) 20%, 
+        var(--vg-gold) 50%, 
+        var(--vg-secondary) 80%, 
+        transparent 100%);
+    margin: var(--vg-spacing-xl) 0;
+    border-radius: 1px;
+}
+
+/* ========================================
+   VERBUM GLORIAE FOOTER
+   ======================================== */
+
+.vg-footer {
+    background: var(--vg-primary);
+    color: var(--vg-white);
+    padding: var(--vg-spacing-xxl) 0 var(--vg-spacing-lg);
+    margin-top: var(--vg-spacing-xxl);
+}
+
+.vg-footer-content {
+    text-align: center;
+    margin-bottom: var(--vg-spacing-xl);
+}
+
+.vg-footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--vg-spacing-lg);
+}
+
+.vg-footer-logo-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--vg-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--vg-spacing-md);
+    color: var(--vg-white);
+    font-size: 1.2rem;
+}
+
+.vg-footer-title {
+    font-family: var(--vg-font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--vg-white);
+    margin: 0;
+}
+
+.vg-footer-description {
+    font-family: var(--vg-font-body);
+    color: var(--vg-cream);
+    max-width: 600px;
+    margin: 0 auto var(--vg-spacing-lg);
+    line-height: 1.6;
+}
+
+.vg-footer-social {
+    display: flex;
+    justify-content: center;
+    gap: var(--vg-spacing-md);
+    margin-bottom: var(--vg-spacing-xl);
+}
+
+.vg-social-link {
+    width: 40px;
+    height: 40px;
+    background: var(--vg-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--vg-white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.vg-social-link:hover {
+    background: var(--vg-gold);
+    transform: translateY(-2px);
+}
+
+.vg-footer-bottom {
+    border-top: 1px solid var(--vg-gray);
+    padding-top: var(--vg-spacing-lg);
+    text-align: center;
+}
+
+.vg-copyright {
+    font-family: var(--vg-font-body);
+    color: var(--vg-cream);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.vg-footer-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--vg-spacing-lg);
+    margin-top: var(--vg-spacing-md);
+}
+
+.vg-footer-link {
+    color: var(--vg-cream);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.vg-footer-link:hover {
+    color: var(--vg-gold);
+}
+
+/* ========================================
+   VERBUM GLORIAE RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+    .vg-header .container {
+        flex-direction: column;
+        gap: var(--vg-spacing-md);
+    }
+    
+    .vg-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--vg-spacing-md);
+    }
+    
+    .vg-hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .vg-hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .vg-section-title {
+        font-size: 2rem;
+    }
+    
+    .vg-footer-social {
+        flex-wrap: wrap;
+    }
+    
+    .vg-footer-links {
+        flex-direction: column;
+        gap: var(--vg-spacing-sm);
+    }
+}
+
+@media (max-width: 576px) {
+    .vg-hero-title {
+        font-size: 2rem;
+    }
+    
+    .vg-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .vg-card {
+        padding: var(--vg-spacing-lg);
+    }
+}
+
+/* ========================================
+   VERBUM GLORIAE UTILITIES
+   ======================================== */
+
+.vg-text-center {
+    text-align: center;
+}
+
+.vg-text-left {
+    text-align: left;
+}
+
+.vg-text-right {
+    text-align: right;
+}
+
+.vg-mb-0 { margin-bottom: 0; }
+.vg-mb-1 { margin-bottom: var(--vg-spacing-xs); }
+.vg-mb-2 { margin-bottom: var(--vg-spacing-sm); }
+.vg-mb-3 { margin-bottom: var(--vg-spacing-md); }
+.vg-mb-4 { margin-bottom: var(--vg-spacing-lg); }
+.vg-mb-5 { margin-bottom: var(--vg-spacing-xl); }
+
+.vg-mt-0 { margin-top: 0; }
+.vg-mt-1 { margin-top: var(--vg-spacing-xs); }
+.vg-mt-2 { margin-top: var(--vg-spacing-sm); }
+.vg-mt-3 { margin-top: var(--vg-spacing-md); }
+.vg-mt-4 { margin-top: var(--vg-spacing-lg); }
+.vg-mt-5 { margin-top: var(--vg-spacing-xl); }
+
+/* ========================================
+   VERBUM GLORIAE CALENDAR STYLES
+   ======================================== */
+
+.vg-calendar {
+    background: var(--vg-white);
+    border: 2px solid var(--vg-secondary);
+    border-radius: var(--vg-border-radius);
+    box-shadow: var(--vg-shadow);
+    overflow: hidden;
+}
+
+.vg-calendar-header {
+    background: var(--vg-secondary);
+    color: var(--vg-white);
+    padding: var(--vg-spacing-lg);
+    text-align: center;
+    position: relative;
+}
+
+.vg-calendar-title {
+    font-family: var(--vg-font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.vg-calendar-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--vg-spacing-lg);
+}
+
+.vg-calendar-nav-btn {
+    background: var(--vg-white);
+    border: 2px solid var(--vg-secondary);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--vg-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.vg-calendar-nav-btn:hover {
+    background: var(--vg-secondary);
+    color: var(--vg-white);
+    transform: scale(1.1);
+}
+
+.vg-calendar-month {
+    font-family: var(--vg-font-heading);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--vg-primary);
+    margin: 0;
+}
+
+.vg-calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: var(--vg-light-gray);
+    border-bottom: 2px solid var(--vg-secondary);
+}
+
+.vg-calendar-weekday {
+    padding: var(--vg-spacing-md);
+    text-align: center;
+    font-family: var(--vg-font-heading);
+    font-weight: 600;
+    color: var(--vg-primary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-right: 1px solid #e0e0e0;
+}
+
+.vg-calendar-weekday:last-child {
+    border-right: none;
+}
+
+.vg-calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0;
+}
+
+.vg-calendar-day {
+    min-height: 60px;
+    padding: var(--vg-spacing-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--vg-font-body);
+    font-size: 1rem;
+    color: var(--vg-primary);
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.vg-calendar-day:nth-child(7n) {
+    border-right: none;
+}
+
+.vg-calendar-day:hover {
+    background: var(--vg-light-gray);
+    color: var(--vg-secondary);
+}
+
+.vg-calendar-day.today {
+    background: var(--vg-secondary);
+    color: var(--vg-white);
+    font-weight: 600;
+}
+
+.vg-calendar-day.today:hover {
+    background: var(--vg-primary);
+    color: var(--vg-white);
+}
+
+.vg-calendar-day.has-event {
+    background: var(--vg-cream);
+    color: var(--vg-secondary);
+    font-weight: 600;
+}
+
+.vg-calendar-day.has-event:hover {
+    background: var(--vg-gold);
+    color: var(--vg-white);
+}
+
+.vg-calendar-day.has-event::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--vg-secondary);
+    border-radius: 50%;
+}
+
+.vg-calendar-day.has-event.today::after {
+    background: var(--vg-white);
+}
+
+.vg-calendar-day.empty {
+    background: #f8f8f8;
+    cursor: default;
+}
+
+.vg-calendar-day.empty:hover {
+    background: #f8f8f8;
+    color: var(--vg-primary);
+}
+
+/* ========================================
+   VERBUM GLORIAE EVENT CARDS
+   ======================================== */
+
+.vg-event-card {
+    background: var(--vg-white);
+    border: 2px solid var(--vg-secondary);
+    border-radius: var(--vg-border-radius);
+    box-shadow: var(--vg-shadow);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    height: 100%;
+}
+
+.vg-event-card:hover {
+    box-shadow: var(--vg-shadow-lg);
+    transform: translateY(-3px);
+    border-color: var(--vg-gold);
+}
+
+.vg-event-header {
+    background: linear-gradient(135deg, var(--vg-secondary) 0%, var(--vg-primary) 100%);
+    color: var(--vg-white);
+    padding: var(--vg-spacing-lg);
+    text-align: center;
+}
+
+.vg-event-date {
+    font-family: var(--vg-font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: var(--vg-spacing-xs);
+}
+
+.vg-event-month {
+    font-family: var(--vg-font-primary);
+    font-size: 0.9rem;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.vg-event-body {
+    padding: var(--vg-spacing-lg);
+}
+
+.vg-event-title {
+    font-family: var(--vg-font-heading);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--vg-primary);
+    margin-bottom: var(--vg-spacing-md);
+    line-height: 1.3;
+}
+
+.vg-event-description {
+    font-family: var(--vg-font-body);
+    color: var(--vg-gray);
+    line-height: 1.6;
+    margin-bottom: var(--vg-spacing-lg);
+}
+
+.vg-event-details {
+    margin-bottom: var(--vg-spacing-lg);
+}
+
+.vg-event-detail {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--vg-spacing-sm);
+    font-family: var(--vg-font-body);
+    color: var(--vg-gray);
+    font-size: 0.9rem;
+}
+
+.vg-event-detail i {
+    color: var(--vg-secondary);
+    margin-right: var(--vg-spacing-sm);
+    width: 16px;
+    text-align: center;
+}
+
+.vg-event-type {
+    display: inline-block;
+    background: var(--vg-secondary);
+    color: var(--vg-white);
+    padding: var(--vg-spacing-xs) var(--vg-spacing-sm);
+    border-radius: var(--vg-border-radius);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--vg-spacing-md);
+}
+
+.vg-event-footer {
+    padding: var(--vg-spacing-lg);
+    padding-top: 0;
+}
+
+.vg-event-btn {
+    width: 100%;
+    background: var(--vg-white);
+    border: 2px solid var(--vg-secondary);
+    color: var(--vg-secondary);
+    padding: var(--vg-spacing-md);
+    border-radius: var(--vg-border-radius);
+    font-family: var(--vg-font-primary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.vg-event-btn:hover {
+    background: var(--vg-secondary);
+    color: var(--vg-white);
+    transform: translateY(-1px);
+}
+
+/* ========================================
+   VERBUM GLORIAE EVENT FILTERS
+   ======================================== */
+
+.vg-event-filters {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--vg-spacing-md);
+    margin-bottom: var(--vg-spacing-xl);
+}
+
+.vg-filter-select {
+    background: var(--vg-white);
+    border: 2px solid var(--vg-secondary);
+    border-radius: var(--vg-border-radius);
+    padding: var(--vg-spacing-sm) var(--vg-spacing-md);
+    font-family: var(--vg-font-body);
+    color: var(--vg-primary);
+    min-width: 150px;
+    transition: all 0.3s ease;
+}
+
+.vg-filter-select:focus {
+    outline: none;
+    border-color: var(--vg-gold);
+    box-shadow: 0 0 0 3px rgba(218, 165, 32, 0.1);
+}
+
+/* ========================================
+   VERBUM GLORIAE EVENT TYPES
+   ======================================== */
+
+.vg-event-type-card {
+    background: var(--vg-white);
+    border: 2px solid var(--vg-secondary);
+    border-radius: var(--vg-border-radius);
+    padding: var(--vg-spacing-xl);
+    box-shadow: var(--vg-shadow);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.vg-event-type-card:hover {
+    box-shadow: var(--vg-shadow-lg);
+    transform: translateY(-3px);
+    border-color: var(--vg-gold);
+}
+
+.vg-event-type-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--vg-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--vg-white);
+    font-size: 1.5rem;
+    margin-bottom: var(--vg-spacing-lg);
+}
+
+.vg-event-type-title {
+    font-family: var(--vg-font-heading);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--vg-primary);
+    margin-bottom: var(--vg-spacing-md);
+}
+
+.vg-event-type-description {
+    font-family: var(--vg-font-body);
+    color: var(--vg-gray);
+    line-height: 1.6;
+    margin-bottom: var(--vg-spacing-lg);
+}
+
+.vg-event-type-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.vg-event-type-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--vg-spacing-sm);
+    font-family: var(--vg-font-body);
+    color: var(--vg-gray);
+    font-size: 0.9rem;
+}
+
+.vg-event-type-list li i {
+    color: var(--vg-secondary);
+    margin-right: var(--vg-spacing-sm);
+    width: 16px;
+}
+
+/* ========================================
+   VERBUM GLORIAE CALENDAR RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+    .vg-calendar-navigation {
+        flex-direction: column;
+        gap: var(--vg-spacing-md);
+    }
+    
+    .vg-calendar-day {
+        min-height: 50px;
+        font-size: 0.9rem;
+    }
+    
+    .vg-calendar-weekday {
+        padding: var(--vg-spacing-sm);
+        font-size: 0.8rem;
+    }
+    
+    .vg-event-filters {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .vg-filter-select {
+        min-width: 120px;
+    }
+}
+
+@media (max-width: 576px) {
+    .vg-calendar-day {
+        min-height: 40px;
+        font-size: 0.8rem;
+        padding: var(--vg-spacing-xs);
+    }
+    
+    .vg-calendar-weekday {
+        padding: var(--vg-spacing-xs);
+        font-size: 0.7rem;
+    }
+    
+    .vg-event-card {
+        margin-bottom: var(--vg-spacing-lg);
+    }
+}

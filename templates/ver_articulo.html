@@ -3,30 +3,30 @@
 {% block title %}{{ articulo.titulo }} - Blog Canto Gregoriano{% endblock %}
 
 {% block content %}
-<!-- Article Header -->
-<section class="article-header">
+<!-- Site Article Header -->
+<section class="site-hero">
     <div class="container">
-        <div class="article-breadcrumb">
-            <a href="{{ url_for('blog') }}">Blog</a>
-            <i class="fas fa-chevron-right"></i>
-            <span>{{ articulo.titulo }}</span>
+        <div class="article-breadcrumb mb-3">
+            <a href="{{ url_for('blog') }}" class="text-white text-decoration-none">
+                <i class="fas fa-arrow-left me-2"></i>Blog
+            </a>
         </div>
         
-        <div class="article-title-section">
-            <h1>{{ articulo.titulo }}</h1>
-            <div class="article-meta">
-                <div class="meta-item">
-                    <i class="fas fa-calendar"></i>
+        <h1 class="site-hero-title">{{ articulo.titulo }}</h1>
+        <div class="article-meta mb-4">
+            <div class="d-flex flex-wrap gap-4 justify-content-center">
+                <div class="d-flex align-items-center text-white">
+                    <i class="fas fa-calendar me-2"></i>
                     <span>{{ articulo.fecha_publicacion[:10] }}</span>
                 </div>
-                <div class="meta-item">
-                    <i class="fas fa-user"></i>
+                <div class="d-flex align-items-center text-white">
+                    <i class="fas fa-user me-2"></i>
                     <span>{{ articulo.autor }}</span>
                 </div>
                 {% if articulo.categoria %}
-                <div class="meta-item">
-                    <i class="fas fa-tag"></i>
-                    <span class="category-tag">{{ articulo.categoria }}</span>
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-tag me-2"></i>
+                    <span class="badge bg-light text-dark">{{ articulo.categoria }}</span>
                 </div>
                 {% endif %}
             </div>
@@ -34,95 +34,144 @@
     </div>
 </section>
 
-<!-- Article Content -->
-<section class="article-content">
+<!-- Site Article Content -->
+<section class="site-section">
     <div class="container">
-        <div class="article-body">
-            <div class="article-text">
-                {{ articulo.contenido|replace('\n', '<br>')|safe }}
-            </div>
-        </div>
-        
-        <!-- Article Footer -->
-        <div class="article-footer">
-            <div class="article-actions">
-                <button class="btn btn-outline" onclick="shareArticle()">
-                    <i class="fas fa-share"></i> Compartir
-                </button>
-                <button class="btn btn-outline" onclick="printArticle()">
-                    <i class="fas fa-print"></i> Imprimir
-                </button>
-            </div>
-            
-            <div class="article-tags">
-                <h4>Etiquetas:</h4>
-                <div class="tags">
-                    <span class="tag">Canto Gregoriano</span>
-                    {% if articulo.categoria %}
-                    <span class="tag">{{ articulo.categoria }}</span>
-                    {% endif %}
-                    <span class="tag">Música Sacra</span>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="site-card">
+                    <div class="site-card-body">
+                        <div class="article-text">
+                            {{ articulo.contenido|replace('\n', '<br>')|safe }}
+                        </div>
+                        
+                        <!-- Article Actions -->
+                        <div class="article-actions mt-4 pt-4 border-top">
+                            <div class="d-flex gap-3 justify-content-center">
+                                <button class="site-btn site-btn-outline" onclick="shareArticle()">
+                                    <i class="fas fa-share me-2"></i> Compartir
+                                </button>
+                                <button class="site-btn site-btn-outline" onclick="printArticle()">
+                                    <i class="fas fa-print me-2"></i> Imprimir
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Article Tags -->
+                        <div class="article-tags mt-4">
+                            <h5 class="site-card-title">Etiquetas:</h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge bg-primary">Canto Gregoriano</span>
+                                {% if articulo.categoria %}
+                                <span class="badge bg-primary">{{ articulo.categoria }}</span>
+                                {% endif %}
+                                <span class="badge bg-primary">Música Sacra</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Related Articles -->
-<section class="related-articles">
+<!-- Site Related Articles -->
+<section class="site-section site-section-alt">
     <div class="container">
-        <h2>Artículos Relacionados</h2>
-        <div class="related-grid">
-            <!-- Placeholder for related articles -->
-            <article class="related-card">
-                <h3><a href="#">La Importancia de la Respiración en el Canto Gregoriano</a></h3>
-                <p class="related-meta">15 de Marzo, 2024</p>
-                <p>Técnicas fundamentales para una correcta interpretación del canto gregoriano...</p>
-            </article>
+        <h2 class="site-section-title">Artículos Relacionados</h2>
+        <p class="site-section-subtitle">
+            Descubre más contenido relacionado con el canto gregoriano
+        </p>
+        
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="site-card">
+                    <div class="site-card-body">
+                        <h5 class="site-card-title">
+                            <a href="#" class="text-decoration-none">La Importancia de la Respiración en el Canto Gregoriano</a>
+                        </h5>
+                        <p class="text-muted small mb-2">15 de Marzo, 2024</p>
+                        <p class="site-card-text">Técnicas fundamentales para una correcta interpretación del canto gregoriano...</p>
+                    </div>
+                </div>
+            </div>
             
-            <article class="related-card">
-                <h3><a href="#">Los Modos Eclesiásticos: Una Guía Completa</a></h3>
-                <p class="related-meta">8 de Marzo, 2024</p>
-                <p>Exploración detallada de los ocho modos utilizados en el canto gregoriano...</p>
-            </article>
+            <div class="col-lg-4 col-md-6">
+                <div class="site-card">
+                    <div class="site-card-body">
+                        <h5 class="site-card-title">
+                            <a href="#" class="text-decoration-none">Los Modos Eclesiásticos: Una Guía Completa</a>
+                        </h5>
+                        <p class="text-muted small mb-2">8 de Marzo, 2024</p>
+                        <p class="site-card-text">Exploración detallada de los ocho modos utilizados en el canto gregoriano...</p>
+                    </div>
+                </div>
+            </div>
             
-            <article class="related-card">
-                <h3><a href="#">El Canto Gregoriano en la Liturgia Moderna</a></h3>
-                <p class="related-meta">1 de Marzo, 2024</p>
-                <p>Reflexiones sobre el papel del canto gregoriano en las celebraciones actuales...</p>
-            </article>
+            <div class="col-lg-4 col-md-6">
+                <div class="site-card">
+                    <div class="site-card-body">
+                        <h5 class="site-card-title">
+                            <a href="#" class="text-decoration-none">El Canto Gregoriano en la Liturgia Moderna</a>
+                        </h5>
+                        <p class="text-muted small mb-2">1 de Marzo, 2024</p>
+                        <p class="site-card-text">Reflexiones sobre el papel del canto gregoriano en las celebraciones actuales...</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Comments Section -->
-<section class="comments-section">
+<!-- Site Comments Section -->
+<section class="site-section">
     <div class="container">
-        <h2>Comentarios</h2>
-        <div class="comments-container">
-            <div class="no-comments">
-                <i class="fas fa-comments"></i>
-                <p>Los comentarios están deshabilitados temporalmente. Si tienes preguntas o comentarios sobre este artículo, por favor contáctanos.</p>
-                <a href="{{ url_for('contacto') }}" class="btn btn-outline">
-                    <i class="fas fa-envelope"></i> Contactar
+        <h2 class="site-section-title">Comentarios</h2>
+        <div class="site-card">
+            <div class="site-card-body text-center">
+                <div class="site-card-icon mb-3">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h5 class="site-card-title">Los comentarios están deshabilitados temporalmente</h5>
+                <p class="site-card-text">Si tienes preguntas o comentarios sobre este artículo, por favor contáctanos.</p>
+                <a href="{{ url_for('contacto') }}" class="site-btn site-btn-outline">
+                    <i class="fas fa-envelope me-2"></i> Contactar
                 </a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Navigation -->
-<section class="article-navigation">
+<!-- Site Navigation -->
+<section class="site-section site-section-alt">
     <div class="container">
-        <div class="nav-links">
-            <a href="{{ url_for('blog') }}" class="nav-link prev">
-                <i class="fas fa-arrow-left"></i>
-                <span>Volver al Blog</span>
-            </a>
-            <a href="{{ url_for('biblioteca') }}" class="nav-link next">
-                <span>Explorar Biblioteca</span>
-                <i class="fas fa-arrow-right"></i>
-            </a>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="site-card">
+                    <div class="site-card-body text-center">
+                        <a href="{{ url_for('blog') }}" class="text-decoration-none">
+                            <div class="site-card-icon mb-3">
+                                <i class="fas fa-arrow-left"></i>
+                            </div>
+                            <h5 class="site-card-title">Volver al Blog</h5>
+                            <p class="site-card-text">Explora más artículos sobre canto gregoriano</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="site-card">
+                    <div class="site-card-body text-center">
+                        <a href="{{ url_for('biblioteca') }}" class="text-decoration-none">
+                            <div class="site-card-icon mb-3">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <h5 class="site-card-title">Explorar Biblioteca</h5>
+                            <p class="site-card-text">Descubre grabaciones y partituras</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

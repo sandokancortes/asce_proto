@@ -1,0 +1,1956 @@
+/* ========================================
+   MODERN DESIGN SYSTEM
+   ======================================== */
+
+:root {
+    /* Primary Color Palette */
+    --primary: #1f4e79;
+    --primary-light: #2c5f8a;
+    --primary-dark: #1a3d5f;
+    --secondary: #4a90a4;
+    --accent: #e8f4f8;
+    --success: #2d7d32;
+    --warning: #f57c00;
+    --danger: #d32f2f;
+    --info: #1976d2;
+    
+    /* Neutral Colors */
+    --white: #ffffff;
+    --light-gray: #f8f9fa;
+    --gray: #6c757d;
+    --dark-gray: #495057;
+    --black: #212529;
+    
+    /* Background Colors */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-accent: #e8f4f8;
+    --bg-dark: #1f4e79;
+    
+    /* Text Colors */
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --text-light: #ffffff;
+    --text-muted: #868e96;
+    
+    /* Typography */
+    --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    
+    /* Border Radius */
+    --border-radius: 4px;
+    --border-radius-lg: 8px;
+    --border-radius-xl: 12px;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    /* Transitions */
+    --transition: all 0.3s ease;
+    --transition-fast: all 0.15s ease;
+}
+
+/* ========================================
+   GLOBAL STYLES
+   ======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    margin: 0;
+    padding: 0;
+}
+
+/* ========================================
+   SITE HEADER
+   ======================================== */
+
+.site-header {
+    background: var(--white);
+    border-bottom: 1px solid #e9ecef;
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.site-header-top {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    padding: var(--spacing-sm) 0;
+    font-size: var(--font-size-sm);
+}
+
+.site-header-top .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-language-selector {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.site-language-selector select {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--text-light);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+}
+
+.site-header-main {
+    padding: var(--spacing-sm) 0;
+}
+
+.site-header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.site-logo-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--spacing-sm);
+}
+
+.site-logo-icon i {
+    color: var(--white);
+    font-size: 1rem;
+}
+
+.site-logo-text h1 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin: 0;
+    color: var(--primary);
+    line-height: 1.1;
+}
+
+.site-logo-text p {
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Search Bar Styles */
+.site-search-bar {
+    background: var(--bg-secondary);
+    border-top: 1px solid #e9ecef;
+    padding: var(--spacing-sm) 0;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    width: 100%;
+    padding: var(--spacing-xs) var(--spacing-md) var(--spacing-xs) var(--spacing-sm);
+    border: 1px solid #e9ecef;
+    border-radius: var(--border-radius-lg);
+    font-size: var(--font-size-sm);
+    transition: var(--transition);
+    background: var(--white);
+    height: 32px;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(31, 78, 121, 0.1);
+}
+
+.search-btn {
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-xs);
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.search-btn:hover {
+    background: var(--primary-dark);
+    color: var(--white);
+}
+
+.search-btn i {
+    font-size: 0.75rem;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.site-nav-item {
+    position: relative;
+}
+
+.site-nav-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+}
+
+.site-nav-link:hover {
+    background: var(--bg-secondary);
+    color: var(--primary);
+}
+
+.site-nav-link.active {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.site-nav-link i {
+    font-size: 0.9rem;
+}
+
+/* ========================================
+   MAIN CONTENT
+   ======================================== */
+
+.site-main {
+    min-height: calc(100vh - 200px);
+}
+
+.site-hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: var(--text-light);
+    padding: var(--spacing-3xl) 0;
+    text-align: center;
+}
+
+.site-hero-title {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.2;
+}
+
+.site-hero-subtitle {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-xl);
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.site-hero-description {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-2xl);
+    opacity: 0.8;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.site-hero-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.site-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-xl);
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.site-btn-primary {
+    background: var(--white);
+    color: var(--primary);
+}
+
+.site-btn-primary:hover {
+    background: var(--bg-secondary);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.site-btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.site-btn-secondary:hover {
+    background: var(--white);
+    color: var(--primary);
+}
+
+.site-btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.site-btn-outline:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* ========================================
+   SITE SECTIONS
+   ======================================== */
+
+.site-section {
+    padding: var(--spacing-3xl) 0;
+}
+
+.site-section-alt {
+    background: var(--bg-secondary);
+}
+
+.site-section-dark {
+    background: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.site-section-title {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-3xl);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--primary);
+}
+
+.site-section-subtitle {
+    font-size: var(--font-size-lg);
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.site-section-dark .site-section-title {
+    color: var(--text-light);
+}
+
+.site-section-dark .site-section-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ========================================
+   JW.ORG INSPIRED CARDS
+   ======================================== */
+
+.site-card {
+    background: var(--white);
+    border: 1px solid #e9ecef;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+    height: 100%;
+}
+
+.site-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.site-card-header {
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid #e9ecef;
+    background: var(--bg-secondary);
+}
+
+.site-card-title {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin: 0;
+    color: var(--primary);
+}
+
+.site-card-body {
+    padding: var(--spacing-lg);
+}
+
+.site-card-text {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+}
+
+.site-card-footer {
+    padding: var(--spacing-lg);
+    padding-top: 0;
+    border-top: 1px solid #e9ecef;
+    background: var(--bg-secondary);
+}
+
+.site-card-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.site-card-icon i {
+    color: var(--white);
+}
+
+/* ========================================
+   JW.ORG INSPIRED FEATURES
+   ======================================== */
+
+.site-feature {
+    text-align: center;
+    padding: var(--spacing-xl);
+}
+
+.site-feature-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-lg);
+    color: var(--primary);
+    font-size: 2rem;
+}
+
+.site-feature-title {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary);
+}
+
+.site-feature-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* ========================================
+   SITE FOOTER
+   ======================================== */
+
+.site-footer {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    padding: var(--spacing-lg) 0 var(--spacing-md);
+}
+
+.site-footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.site-footer-section h3 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-light);
+}
+
+.site-footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.site-footer-links li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.site-footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.site-footer-links a:hover {
+    color: var(--text-light);
+}
+
+.site-footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--spacing-md);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.site-footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.site-footer-logo-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--spacing-sm);
+}
+
+.site-footer-logo-icon i {
+    color: var(--primary);
+    font-size: 1rem;
+}
+
+.site-footer-logo-text h3 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-light);
+}
+
+.site-footer-logo-text p {
+    font-size: var(--font-size-sm);
+    margin: 0;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ========================================
+   JW.ORG INSPIRED UTILITIES
+   ======================================== */
+
+.site-text-center { text-align: center; }
+.site-text-left { text-align: left; }
+.site-text-right { text-align: right; }
+
+.site-mb-0 { margin-bottom: 0; }
+.site-mb-1 { margin-bottom: var(--spacing-xs); }
+.site-mb-2 { margin-bottom: var(--spacing-sm); }
+.site-mb-3 { margin-bottom: var(--spacing-md); }
+.site-mb-4 { margin-bottom: var(--spacing-lg); }
+.site-mb-5 { margin-bottom: var(--spacing-xl); }
+
+.site-mt-0 { margin-top: 0; }
+.site-mt-1 { margin-top: var(--spacing-xs); }
+.site-mt-2 { margin-top: var(--spacing-sm); }
+.site-mt-3 { margin-top: var(--spacing-md); }
+.site-mt-4 { margin-top: var(--spacing-lg); }
+.site-mt-5 { margin-top: var(--spacing-xl); }
+
+.site-p-0 { padding: 0; }
+.site-p-1 { padding: var(--spacing-xs); }
+.site-p-2 { padding: var(--spacing-sm); }
+.site-p-3 { padding: var(--spacing-md); }
+.site-p-4 { padding: var(--spacing-lg); }
+.site-p-5 { padding: var(--spacing-xl); }
+
+/* ========================================
+   LIBRARY TYPOGRAPHY STYLES
+   ======================================== */
+
+/* Library Hero Section Typography */
+.site-hero .site-hero-title {
+    color: var(--white);
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.site-hero .site-hero-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    font-size: var(--font-size-lg);
+}
+
+.site-hero .site-hero-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+}
+
+/* Library Filters Section Typography */
+.site-section-alt .site-section-title {
+    color: var(--text-primary);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.site-section-alt .site-section-subtitle {
+    color: var(--text-secondary);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Filter Form Typography */
+.filters-form .form-label {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.filters-form .input-group-text {
+    background: var(--primary) !important;
+    color: var(--white) !important;
+    border-color: var(--primary) !important;
+    font-weight: 500;
+}
+
+.filters-form .input-group-text i {
+    color: var(--white) !important;
+    font-size: var(--font-size-sm);
+}
+
+.filters-form .form-select {
+    color: var(--text-primary);
+    font-weight: 500;
+    border-color: var(--primary) !important;
+}
+
+.filters-form .form-select:focus {
+    border-color: var(--primary-dark) !important;
+    box-shadow: 0 0 0 0.2rem rgba(var(--primary-rgb), 0.25) !important;
+}
+
+.filters-form .form-select option {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Resources Section Typography */
+.site-section .site-section-title {
+    color: var(--text-primary);
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.resources-count .badge {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+    color: var(--white) !important;
+    font-weight: 600;
+    text-shadow: none;
+    font-size: var(--font-size-sm);
+}
+
+.resources-count .badge i {
+    color: var(--white) !important;
+}
+
+/* Resource Cards Typography */
+.site-card-title {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-xs);
+    transition: color 0.3s ease;
+}
+
+.site-card-title:hover {
+    color: var(--primary);
+}
+
+.site-card-text {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Resource Meta Information */
+.resource-meta {
+    margin-bottom: var(--spacing-md);
+}
+
+.resource-meta .badge {
+    background: var(--bg-accent) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color);
+    font-weight: 500;
+    font-size: var(--font-size-xs);
+    margin-right: var(--spacing-xs);
+    margin-bottom: var(--spacing-xs);
+}
+
+.resource-meta .badge i {
+    color: var(--primary);
+    margin-right: var(--spacing-xs);
+}
+
+/* Resource Date Typography */
+.resource-date {
+    color: var(--text-muted);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+}
+
+/* Audio Player Typography */
+.audio-player {
+    background: var(--bg-accent) !important;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg) !important;
+    padding: var(--spacing-md) !important;
+}
+
+.audio-player audio {
+    width: 100%;
+    height: 40px;
+}
+
+/* Video Container Typography */
+.video-container {
+    background: var(--bg-dark) !important;
+    border-radius: var(--border-radius-lg) !important;
+    overflow: hidden;
+}
+
+.video-container .text-white {
+    color: var(--white) !important;
+}
+
+.video-container .display-1 {
+    color: var(--white) !important;
+    opacity: 0.8;
+}
+
+.video-container p {
+    color: var(--white) !important;
+    font-weight: 500;
+}
+
+/* Partitura Viewer Typography */
+.partitura-viewer {
+    background: var(--bg-accent) !important;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg) !important;
+    padding: var(--spacing-lg) !important;
+}
+
+.partitura-content .display-4 {
+    color: var(--primary) !important;
+    margin-bottom: var(--spacing-md);
+}
+
+.partitura-content .text-danger {
+    color: var(--danger) !important;
+}
+
+.partitura-content .text-primary {
+    color: var(--primary) !important;
+}
+
+.partitura-content .text-muted {
+    color: var(--text-muted) !important;
+}
+
+.partitura-content p {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+}
+
+.partitura-content .btn {
+    font-weight: 500;
+    border-radius: var(--border-radius);
+}
+
+.partitura-content .btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
+}
+
+.partitura-content .btn-primary:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.partitura-content .btn-outline-primary {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.partitura-content .btn-outline-primary:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
+}
+
+/* No Resources Message Typography */
+.no-resources .display-1 {
+    color: var(--text-muted) !important;
+    margin-bottom: var(--spacing-lg);
+}
+
+.no-resources .site-card-title {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+}
+
+.no-resources .site-card-text {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Categories Section Typography */
+.site-section-alt .site-section-title {
+    color: var(--text-primary);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.site-section-alt .site-section-subtitle {
+    color: var(--text-secondary);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.site-section-alt .site-card-title {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.site-section-alt .site-card-text {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+}
+
+.site-section-alt .site-btn {
+    font-weight: 500;
+}
+
+/* Resource Type Icons */
+.site-card-icon {
+    background: var(--primary);
+    color: var(--white);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-lg);
+    margin-right: var(--spacing-md);
+}
+
+.site-card-icon i {
+    color: var(--white);
+}
+
+/* Responsive Library Typography */
+@media (max-width: 768px) {
+    .site-hero .site-hero-title {
+        font-size: var(--font-size-xl);
+    }
+    
+    .site-hero .site-hero-subtitle {
+        font-size: var(--font-size-base);
+    }
+    
+    .site-card-title {
+        font-size: var(--font-size-base);
+    }
+    
+    .filters-form .form-label {
+        font-size: var(--font-size-xs);
+    }
+    
+    .resources-count .badge {
+        font-size: var(--font-size-xs);
+    }
+}
+
+@media (max-width: 576px) {
+    .site-hero .site-hero-title {
+        font-size: var(--font-size-lg);
+    }
+    
+    .site-card-title {
+        font-size: var(--font-size-sm);
+    }
+    
+    .site-card-text {
+        font-size: var(--font-size-sm);
+    }
+    
+    .filters-form .form-label {
+        font-size: 0.7rem;
+    }
+    
+    .resource-meta .badge {
+        font-size: 0.65rem;
+    }
+}
+
+/* ========================================
+   HERO CAROUSEL STYLES
+   ======================================== */
+
+/* Hero Carousel Container */
+.site-hero .carousel {
+    height: 100%;
+    min-height: 500px;
+}
+
+.site-hero .carousel-inner {
+    height: 100%;
+}
+
+.site-hero .carousel-item {
+    height: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    position: relative;
+}
+
+.site-hero .carousel-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.site-hero .carousel-item .container {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+        flex-direction: column;
+    justify-content: center;
+}
+
+/* Carousel Indicators */
+.site-hero .carousel-indicators {
+    bottom: 20px;
+    margin-bottom: 0;
+    z-index: 3;
+}
+
+.site-hero .carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: transparent;
+    margin: 0 6px;
+    transition: all 0.3s ease;
+}
+
+.site-hero .carousel-indicators [data-bs-target].active {
+    background: var(--white);
+    border-color: var(--white);
+    transform: scale(1.2);
+}
+
+.site-hero .carousel-indicators [data-bs-target]:hover {
+    border-color: var(--white);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Carousel Controls */
+.site-hero .carousel-control-prev,
+.site-hero .carousel-control-next {
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    z-index: 3;
+}
+
+.site-hero .carousel-control-prev {
+    left: 20px;
+}
+
+.site-hero .carousel-control-next {
+    right: 20px;
+}
+
+.site-hero .carousel-control-prev:hover,
+.site-hero .carousel-control-next:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--white);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.site-hero .carousel-control-prev-icon,
+.site-hero .carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
+}
+
+/* Carousel Content Animation */
+.site-hero .carousel-item {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.site-hero .carousel-item.active {
+    opacity: 1;
+}
+
+.site-hero .carousel-item .site-hero-title,
+.site-hero .carousel-item .site-hero-subtitle,
+.site-hero .carousel-item .site-hero-description,
+.site-hero .carousel-item .site-hero-actions {
+    animation: slideInUp 0.8s ease-out;
+}
+
+.site-hero .carousel-item.active .site-hero-title {
+    animation-delay: 0.2s;
+}
+
+.site-hero .carousel-item.active .site-hero-subtitle {
+    animation-delay: 0.4s;
+}
+
+.site-hero .carousel-item.active .site-hero-description {
+    animation-delay: 0.6s;
+}
+
+.site-hero .carousel-item.active .site-hero-actions {
+    animation-delay: 0.8s;
+}
+
+/* Keyframes for Animation */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Hero Carousel */
+@media (max-width: 768px) {
+    .site-hero .carousel,
+    .site-hero .carousel-item {
+        min-height: 400px;
+    }
+    
+    .site-hero .carousel-control-prev,
+    .site-hero .carousel-control-next {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .site-hero .carousel-control-prev {
+        left: 10px;
+    }
+    
+    .site-hero .carousel-control-next {
+        right: 10px;
+    }
+    
+    .site-hero .carousel-control-prev-icon,
+    .site-hero .carousel-control-next-icon {
+        width: 16px;
+        height: 16px;
+        background-size: 16px 16px;
+    }
+    
+    .site-hero .carousel-indicators {
+        bottom: 15px;
+    }
+    
+    .site-hero .carousel-indicators [data-bs-target] {
+        width: 10px;
+        height: 10px;
+        margin: 0 4px;
+    }
+}
+
+@media (max-width: 576px) {
+    .site-hero .carousel,
+    .site-hero .carousel-item {
+        min-height: 350px;
+    }
+    
+    .site-hero .carousel-control-prev,
+    .site-hero .carousel-control-next {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .site-hero .carousel-control-prev {
+        left: 5px;
+    }
+    
+    .site-hero .carousel-control-next {
+        right: 5px;
+    }
+    
+    .site-hero .carousel-control-prev-icon,
+    .site-hero .carousel-control-next-icon {
+        width: 14px;
+        height: 14px;
+        background-size: 14px 14px;
+    }
+    
+    .site-hero .carousel-indicators [data-bs-target] {
+        width: 8px;
+        height: 8px;
+        margin: 0 3px;
+    }
+}
+
+/* ========================================
+   BLOG TYPOGRAPHY STYLES
+   ======================================== */
+
+/* Blog Hero Section Typography */
+.site-hero .site-hero-title {
+    color: var(--white);
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.site-hero .site-hero-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    font-size: var(--font-size-lg);
+}
+
+.site-hero .site-hero-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+}
+
+/* Article Card Typography */
+.site-card-title {
+    color: var(--text-primary);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.site-card-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.site-card-title a:hover {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.site-card-text {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: var(--font-size-base);
+}
+
+/* Featured Article Typography */
+.featured-badge .badge {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+    color: var(--white) !important;
+    font-weight: 600;
+    text-shadow: none;
+}
+
+/* Featured Article Title Specific Styling */
+.site-section-title.mb-4 {
+    color: var(--primary) !important;
+    font-weight: 700;
+    font-size: var(--font-size-2xl);
+    line-height: 1.3;
+    margin-bottom: var(--spacing-lg) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.site-section-title.mb-4 a {
+    color: inherit !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+}
+
+.site-section-title.mb-4 a:hover {
+    color: var(--primary-dark) !important;
+    text-decoration: none !important;
+    transform: translateY(-1px);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.article-meta {
+    color: var(--text-muted);
+    font-size: var(--font-size-sm);
+}
+
+.article-meta i {
+    color: var(--primary);
+    opacity: 0.8;
+}
+
+.article-meta .badge {
+    background: var(--bg-accent) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color);
+    font-weight: 500;
+}
+
+/* Article Links Typography */
+.site-card-title a {
+    color: var(--text-primary);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.site-card-title a:hover {
+    color: var(--primary);
+    transform: translateY(-1px);
+}
+
+/* Article Grid Typography */
+.articles-count .badge {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+    color: var(--white) !important;
+    font-weight: 600;
+    text-shadow: none;
+}
+
+/* Category Cards Typography */
+.site-section .site-card-title {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.site-section .site-card-text {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Newsletter Section Typography */
+.site-section-dark .site-section-title {
+    color: var(--white);
+    font-weight: 700;
+}
+
+.site-section-dark .site-section-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--font-size-lg);
+}
+
+.newsletter-disclaimer {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: var(--font-size-sm);
+}
+
+.newsletter-disclaimer i {
+    color: var(--white);
+}
+
+/* Article View Typography */
+.article-text {
+    color: var(--text-primary);
+    line-height: 1.8;
+    font-size: var(--font-size-base);
+}
+
+.article-text h1, .article-text h2, .article-text h3, 
+.article-text h4, .article-text h5, .article-text h6 {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.article-text h1 {
+    font-size: var(--font-size-2xl);
+    color: var(--primary);
+}
+
+.article-text h2 {
+    font-size: var(--font-size-xl);
+    color: var(--primary);
+}
+
+.article-text h3 {
+    font-size: var(--font-size-lg);
+    color: var(--text-primary);
+}
+
+.article-text p {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-secondary);
+}
+
+.article-text strong, .article-text b {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.article-text em, .article-text i {
+    color: var(--text-primary);
+    font-style: italic;
+}
+
+.article-text blockquote {
+    border-left: 4px solid var(--primary);
+    padding-left: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+    color: var(--text-secondary);
+    font-style: italic;
+    background: var(--bg-accent);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+}
+
+.article-text ul, .article-text ol {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-secondary);
+}
+
+.article-text li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.article-text a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.article-text a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* Article Actions Typography */
+.article-actions .site-btn {
+    font-weight: 500;
+}
+
+/* Article Tags Typography */
+.article-tags .site-card-title {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.article-tags .badge {
+    background: var(--primary) !important;
+    color: var(--white) !important;
+    font-weight: 500;
+    font-size: var(--font-size-sm);
+}
+
+/* Related Articles Typography */
+.site-section-alt .site-section-title {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.site-section-alt .site-section-subtitle {
+    color: var(--text-secondary);
+    font-size: var(--font-size-lg);
+}
+
+.site-section-alt .site-card-title a {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.site-section-alt .site-card-title a:hover {
+    color: var(--primary);
+}
+
+.site-section-alt .site-card-text {
+    color: var(--text-secondary);
+}
+
+/* Comments Section Typography */
+.comments-section .site-card-title {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.comments-section .site-card-text {
+    color: var(--text-secondary);
+}
+
+/* Navigation Section Typography */
+.navigation-section .site-card-title {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.navigation-section .site-card-text {
+    color: var(--text-secondary);
+}
+
+/* Responsive Blog Typography */
+@media (max-width: 768px) {
+    .site-hero .site-hero-title {
+        font-size: var(--font-size-xl);
+    }
+    
+    .site-hero .site-hero-subtitle {
+        font-size: var(--font-size-base);
+    }
+    
+    .site-card-title {
+        font-size: var(--font-size-lg);
+    }
+    
+    .site-section-title.mb-4 {
+        font-size: var(--font-size-xl);
+        line-height: 1.2;
+    }
+    
+    .article-text {
+        font-size: var(--font-size-sm);
+        line-height: 1.7;
+    }
+    
+    .article-text h1 {
+        font-size: var(--font-size-xl);
+    }
+    
+    .article-text h2 {
+        font-size: var(--font-size-lg);
+    }
+}
+
+@media (max-width: 576px) {
+    .site-hero .site-hero-title {
+        font-size: var(--font-size-lg);
+    }
+    
+    .site-card-title {
+        font-size: var(--font-size-base);
+    }
+    
+    .site-section-title.mb-4 {
+        font-size: var(--font-size-lg);
+        line-height: 1.1;
+        margin-bottom: var(--spacing-md) !important;
+    }
+    
+    .article-text {
+        font-size: var(--font-size-xs);
+    }
+    
+    .article-text h1 {
+        font-size: var(--font-size-lg);
+    }
+    
+    .article-text h2 {
+        font-size: var(--font-size-base);
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+    .site-header-main {
+        padding: var(--spacing-xs) 0;
+    }
+    
+    .site-header-content {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .site-logo-icon {
+        width: 28px;
+        height: 28px;
+        margin-right: var(--spacing-xs);
+    }
+    
+    .site-logo-icon i {
+        font-size: 0.9rem;
+    }
+    
+    .site-logo-text h1 {
+        font-size: var(--font-size-lg);
+    }
+    
+    .site-logo-text p {
+        font-size: 0.65rem;
+    }
+    
+    .site-search-bar {
+        padding: var(--spacing-xs) 0;
+    }
+    
+    .site-search-bar .col-lg-6 {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .search-input {
+        font-size: var(--font-size-xs);
+        height: 28px;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    .search-btn {
+        width: 24px;
+        height: 24px;
+        right: 3px;
+    }
+    
+    .search-btn i {
+        font-size: 0.65rem;
+    }
+    
+    .site-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .site-hero-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .site-hero-subtitle {
+        font-size: var(--font-size-lg);
+    }
+    
+    .site-hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .site-section-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .site-footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 576px) {
+    .site-header-main {
+        padding: 2px 0;
+    }
+    
+    .site-logo-icon {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .site-logo-icon i {
+        font-size: 0.8rem;
+    }
+    
+    .site-logo-text h1 {
+        font-size: var(--font-size-base);
+    }
+    
+    .site-logo-text p {
+        font-size: 0.6rem;
+    }
+    
+    .site-nav {
+        gap: var(--spacing-sm);
+    }
+    
+    .site-nav-link {
+        padding: 2px var(--spacing-xs);
+        font-size: var(--font-size-xs);
+    }
+    
+    .site-search-bar {
+        padding: 2px 0;
+    }
+    
+    .site-search-bar .col-lg-6 {
+        padding: 0 var(--spacing-xs);
+    }
+    
+    .search-input {
+        font-size: 0.7rem;
+        height: 24px;
+        padding: 2px var(--spacing-xs);
+    }
+    
+    .search-btn {
+        width: 20px;
+        height: 20px;
+        right: 2px;
+    }
+    
+    .search-btn i {
+        font-size: 0.6rem;
+    }
+    
+    .site-hero {
+        padding: var(--spacing-2xl) 0;
+    }
+    
+    .site-hero-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .site-hero-subtitle {
+        font-size: var(--font-size-base);
+    }
+    
+    .site-section {
+        padding: var(--spacing-2xl) 0;
+    }
+    
+    .site-card-body {
+        padding: var(--spacing-md);
+    }
+    
+    .site-feature {
+        padding: var(--spacing-lg);
+    }
+}
+
+/* ========================================
+   JW.ORG INSPIRED ACCESSIBILITY
+   ======================================== */
+
+.site-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.site-focus-visible:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* ========================================
+   JW.ORG INSPIRED ANIMATIONS
+   ======================================== */
+
+@keyframes jw-fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.site-animate-fadeIn {
+    animation: jw-fadeIn 0.6s ease-out;
+}
+
+.site-animate-delay-1 { animation-delay: 0.1s; }
+.site-animate-delay-2 { animation-delay: 0.2s; }
+.site-animate-delay-3 { animation-delay: 0.3s; }
+.site-animate-delay-4 { animation-delay: 0.4s; }
+
+/* ========================================
+   CALENDAR STYLES
+   ======================================== */
+
+.site-calendar-container {
+    background-color: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.site-calendar-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: var(--bg-secondary);
+    border-bottom: 2px solid var(--bg-accent);
+}
+
+.site-calendar-day-header {
+    padding: 16px 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--bg-accent);
+}
+
+.site-calendar-day-header:last-child {
+    border-right: none;
+}
+
+.site-calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0;
+}
+
+.site-calendar-day {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: var(--white);
+    border-right: 1px solid var(--bg-accent);
+    border-bottom: 1px solid var(--bg-accent);
+    color: var(--text-primary);
+    position: relative;
+}
+
+.site-calendar-day:nth-child(7n) {
+    border-right: none;
+}
+
+.site-calendar-day:hover {
+    background-color: var(--bg-accent);
+    transform: scale(1.05);
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.site-calendar-day.today {
+    background-color: var(--primary);
+    color: var(--white);
+    font-weight: 700;
+    position: relative;
+}
+
+.site-calendar-day.today::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 6px;
+    height: 6px;
+    background-color: var(--white);
+    border-radius: 50%;
+}
+
+.site-calendar-day.has-event {
+    background-color: var(--accent);
+    color: var(--primary);
+    font-weight: 600;
+    position: relative;
+}
+
+.site-calendar-day.has-event::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 6px;
+    height: 6px;
+    background-color: var(--secondary);
+    border-radius: 50%;
+}
+
+.site-calendar-day.has-event:hover {
+    background-color: var(--secondary);
+    color: var(--white);
+}
+
+.site-calendar-day.has-event:hover::before {
+    background-color: var(--white);
+}
+
+.site-calendar-day.weekend {
+    background-color: var(--light-gray);
+    color: var(--text-secondary);
+}
+
+.site-calendar-day.weekend.today {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.site-calendar-day.weekend.has-event {
+    background-color: var(--accent);
+    color: var(--primary);
+}
+
+.site-calendar-day.empty {
+    background-color: var(--light-gray);
+    border: none;
+    cursor: default;
+    opacity: 0.3;
+}
+
+.site-calendar-day.empty:hover {
+    background-color: var(--light-gray);
+    transform: none;
+    box-shadow: none;
+}
+
+/* Calendar Legend */
+.site-calendar-legend {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-right: 8px;
+    border: 1px solid var(--bg-accent);
+}
+
+.site-calendar-legend.has-event {
+    background-color: var(--accent);
+    border-color: var(--secondary);
+}
+
+.site-calendar-legend.today {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.site-calendar-legend.weekend {
+    background-color: var(--light-gray);
+    border-color: var(--bg-accent);
+}
+
+/* Responsive Calendar */
+@media (max-width: 768px) {
+    .site-calendar-day {
+        min-height: 50px;
+        font-size: var(--font-size-xs);
+    }
+    
+    .site-calendar-day-header {
+        padding: 12px 4px;
+        font-size: var(--font-size-xs);
+    }
+    
+    .site-calendar-legend {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .site-calendar-day {
+        min-height: 45px;
+        font-size: 0.75rem;
+    }
+    
+    .site-calendar-day-header {
+        padding: 10px 2px;
+        font-size: 0.75rem;
+    }
+}

@@ -41,112 +41,109 @@
 {% endblock %}
 
 {% block content %}
-<!-- Page Header -->
-<section class="bg-gradient-primary text-white py-5">
+<!-- Site Hero Section -->
+<section class="site-hero">
     <div class="container">
-        <div class="row justify-content-center text-center">
-            <div class="col-lg-8">
-                <h1 class="display-4 fw-bold mb-4">Biblioteca de Recursos</h1>
-                <p class="lead">Explora nuestra colección de grabaciones, partituras y recursos multimedia del canto gregoriano</p>
-            </div>
-        </div>
+        <h1 class="site-hero-title">Biblioteca de Recursos</h1>
+        <p class="site-hero-subtitle">
+            Explora nuestra colección de grabaciones, partituras y recursos multimedia del canto gregoriano
+        </p>
+        <p class="site-hero-description">
+            Descubre una amplia selección de recursos auténticos para el estudio y apreciación del canto gregoriano.
+        </p>
     </div>
 </section>
 
-<!-- Filters Section -->
-<section class="py-5 bg-gradient-light">
+<!-- Site Filters Section -->
+<section class="site-section site-section-alt">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <div class="card border-0 shadow-soft">
-                    <div class="card-header bg-gradient-primary text-white border-0 py-4">
-                        <h3 class="fw-bold mb-0 text-center">
-                            <i class="fas fa-filter me-2"></i>Filtrar Recursos
-                        </h3>
-                    </div>
-                    <div class="card-body p-4">
-                        <form class="filters-form" id="filters-form">
-                            <div class="row g-4">
-                                <div class="col-md-6 col-lg-3">
-                                    <label for="tipo" class="form-label fw-bold">Tipo de Recurso</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text bg-primary bg-opacity-10 border-primary">
-                                            <i class="fas fa-tag text-primary"></i>
-                                        </span>
-                                        <select name="tipo" id="tipo" class="form-select border-primary">
-                                            <option value="todos" {% if filtros_actuales.tipo == 'todos' %}selected{% endif %}>Todos</option>
-                                            <option value="audio" {% if filtros_actuales.tipo == 'audio' %}selected{% endif %}>Audio</option>
-                                            <option value="video" {% if filtros_actuales.tipo == 'video' %}selected{% endif %}>Video</option>
-                                            <option value="partitura" {% if filtros_actuales.tipo == 'partitura' %}selected{% endif %}>Partitura</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-6 col-lg-3">
-                                    <label for="epoca" class="form-label fw-bold">Época</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text bg-primary bg-opacity-10 border-primary">
-                                            <i class="fas fa-clock text-primary"></i>
-                                        </span>
-                                        <select name="epoca" id="epoca" class="form-select border-primary">
-                                            <option value="todas" {% if filtros_actuales.epoca == 'todas' %}selected{% endif %}>Todas</option>
-                                            {% for epoca in epocas %}
-                                            <option value="{{ epoca.epoca }}" {% if filtros_actuales.epoca == epoca.epoca %}selected{% endif %}>{{ epoca.epoca }}</option>
-                                            {% endfor %}
-                                        </select>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-6 col-lg-3">
-                                    <label for="canto" class="form-label fw-bold">Tipo de Canto</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text bg-primary bg-opacity-10 border-primary">
-                                            <i class="fas fa-music text-primary"></i>
-                                        </span>
-                                        <select name="canto" id="canto" class="form-select border-primary">
-                                            <option value="todos" {% if filtros_actuales.canto == 'todos' %}selected{% endif %}>Todos</option>
-                                            {% for tipo in tipos_canto %}
-                                            <option value="{{ tipo.tipo_canto }}" {% if filtros_actuales.canto == tipo.tipo_canto %}selected{% endif %}>{{ tipo.tipo_canto }}</option>
-                                            {% endfor %}
-                                        </select>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-6 col-lg-3">
-                                    <label for="comunidad" class="form-label fw-bold">Comunidad</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text bg-primary bg-opacity-10 border-primary">
-                                            <i class="fas fa-church text-primary"></i>
-                                        </span>
-                                        <select name="comunidad" id="comunidad" class="form-select border-primary">
-                                            <option value="todas" {% if filtros_actuales.comunidad == 'todas' %}selected{% endif %}>Todas</option>
-                                            {% for comunidad in comunidades %}
-                                            <option value="{{ comunidad.comunidad_monastica }}" {% if filtros_actuales.comunidad == comunidad.comunidad_monastica %}selected{% endif %}>{{ comunidad.comunidad_monastica }}</option>
-                                            {% endfor %}
-                                        </select>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-12 text-center">
-                                    <button type="submit" class="btn btn-primary btn-lg px-5">
-                                        <i class="fas fa-filter me-2"></i> Aplicar Filtros
-                                    </button>
-                                </div>
+        <h2 class="site-section-title">Filtrar Recursos</h2>
+        <p class="site-section-subtitle">
+            Encuentra exactamente lo que buscas utilizando nuestros filtros avanzados
+        </p>
+        
+        <div class="site-card">
+            <div class="site-card-body">
+                <form class="filters-form" id="filters-form">
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-3">
+                            <label for="tipo" class="form-label fw-bold">Tipo de Recurso</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-primary bg-opacity-10 border-primary">
+                                    <i class="fas fa-tag text-primary"></i>
+                                </span>
+                                <select name="tipo" id="tipo" class="form-select border-primary">
+                                    <option value="todos" {% if filtros_actuales.tipo == 'todos' %}selected{% endif %}>Todos</option>
+                                    <option value="audio" {% if filtros_actuales.tipo == 'audio' %}selected{% endif %}>Audio</option>
+                                    <option value="video" {% if filtros_actuales.tipo == 'video' %}selected{% endif %}>Video</option>
+                                    <option value="partitura" {% if filtros_actuales.tipo == 'partitura' %}selected{% endif %}>Partitura</option>
+                                </select>
                             </div>
-                        </form>
+                        </div>
+                        
+                        <div class="col-md-6 col-lg-3">
+                            <label for="epoca" class="form-label fw-bold">Época</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-primary bg-opacity-10 border-primary">
+                                    <i class="fas fa-clock text-primary"></i>
+                                </span>
+                                <select name="epoca" id="epoca" class="form-select border-primary">
+                                    <option value="todas" {% if filtros_actuales.epoca == 'todas' %}selected{% endif %}>Todas</option>
+                                    {% for epoca in epocas %}
+                                    <option value="{{ epoca.epoca }}" {% if filtros_actuales.epoca == epoca.epoca %}selected{% endif %}>{{ epoca.epoca }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 col-lg-3">
+                            <label for="canto" class="form-label fw-bold">Tipo de Canto</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-primary bg-opacity-10 border-primary">
+                                    <i class="fas fa-music text-primary"></i>
+                                </span>
+                                <select name="canto" id="canto" class="form-select border-primary">
+                                    <option value="todos" {% if filtros_actuales.canto == 'todos' %}selected{% endif %}>Todos</option>
+                                    {% for tipo in tipos_canto %}
+                                    <option value="{{ tipo.tipo_canto }}" {% if filtros_actuales.canto == tipo.tipo_canto %}selected{% endif %}>{{ tipo.tipo_canto }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 col-lg-3">
+                            <label for="comunidad" class="form-label fw-bold">Comunidad</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-primary bg-opacity-10 border-primary">
+                                    <i class="fas fa-church text-primary"></i>
+                                </span>
+                                <select name="comunidad" id="comunidad" class="form-select border-primary">
+                                    <option value="todas" {% if filtros_actuales.comunidad == 'todas' %}selected{% endif %}>Todas</option>
+                                    {% for comunidad in comunidades %}
+                                    <option value="{{ comunidad.comunidad_monastica }}" {% if filtros_actuales.comunidad == comunidad.comunidad_monastica %}selected{% endif %}>{{ comunidad.comunidad_monastica }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 text-center">
+                            <button type="submit" class="site-btn site-btn-primary">
+                                <i class="fas fa-filter me-2"></i> Aplicar Filtros
+                            </button>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Resources Section -->
-<section class="py-5">
+<!-- Site Resources Section -->
+<section class="site-section">
     <div class="container">
-        <div class="row align-items-center mb-5">
+        <div class="row align-items-center mb-4">
             <div class="col-md-6">
-                <h2 class="display-6 fw-bold text-gradient mb-0">Recursos Disponibles</h2>
+                <h2 class="site-section-title">Recursos Disponibles</h2>
             </div>
             <div class="col-md-6 text-md-end">
                 <div class="resources-count">
@@ -162,35 +159,26 @@
             {% if recursos %}
                 {% for recurso in recursos %}
                 <div class="col-lg-4 col-md-6">
-                    <div class="card border-0 shadow-soft h-100 hover-lift" data-type="{{ recurso.tipo }}">
-                        <div class="card-header bg-gradient-light border-0 py-3">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="d-flex align-items-center">
+                    <div class="site-card" data-type="{{ recurso.tipo }}">
+                        <div class="site-card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="site-card-icon me-3">
                                     {% if recurso.tipo == 'audio' %}
-                                        <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
-                                            <i class="fas fa-music text-primary"></i>
-                                        </div>
-                                        <span class="fw-bold text-primary">Audio</span>
+                                        <i class="fas fa-music"></i>
                                     {% elif recurso.tipo == 'video' %}
-                                        <div class="bg-danger bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
-                                            <i class="fas fa-video text-danger"></i>
-                                        </div>
-                                        <span class="fw-bold text-danger">Video</span>
+                                        <i class="fas fa-video"></i>
                                     {% elif recurso.tipo == 'partitura' %}
-                                        <div class="bg-success bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
-                                            <i class="fas fa-file-alt text-success"></i>
-                                        </div>
-                                        <span class="fw-bold text-success">Partitura</span>
+                                        <i class="fas fa-file-alt"></i>
                                     {% endif %}
                                 </div>
-                                <small class="text-muted">{{ recurso.fecha_agregado[:10] }}</small>
+                                <div>
+                                    <h5 class="site-card-title mb-0">{{ recurso.titulo }}</h5>
+                                    <small class="text-muted">{{ recurso.fecha_agregado[:10] }}</small>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="card-body p-4">
-                            <h5 class="fw-bold mb-3">{{ recurso.titulo }}</h5>
+                            
                             {% if recurso.descripcion %}
-                            <p class="text-muted mb-3">{{ recurso.descripcion }}</p>
+                            <p class="site-card-text mb-3">{{ recurso.descripcion }}</p>
                             {% endif %}
                             
                             <div class="mb-3">
@@ -274,13 +262,15 @@
             {% else %}
                 <div class="col-12">
                     <div class="text-center py-5">
-                        <div class="bg-light rounded-3 p-5">
-                            <i class="fas fa-search display-1 text-muted mb-4"></i>
-                            <h3 class="fw-bold mb-3">No se encontraron recursos</h3>
-                            <p class="text-muted mb-4">Intenta ajustar los filtros para encontrar más contenido.</p>
-                            <button class="btn btn-primary" onclick="document.getElementById('filters-form').scrollIntoView()">
-                                <i class="fas fa-filter me-2"></i> Ajustar Filtros
-                            </button>
+                        <div class="site-card">
+                            <div class="site-card-body text-center">
+                                <i class="fas fa-search display-1 text-muted mb-4"></i>
+                                <h3 class="site-card-title">No se encontraron recursos</h3>
+                                <p class="site-card-text mb-4">Intenta ajustar los filtros para encontrar más contenido.</p>
+                                <button class="site-btn site-btn-primary" onclick="document.getElementById('filters-form').scrollIntoView()">
+                                    <i class="fas fa-filter me-2"></i> Ajustar Filtros
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -289,24 +279,24 @@
     </div>
 </section>
 
-<!-- Categories Section -->
-<section class="py-5 bg-gradient-light">
+<!-- Site Categories Section -->
+<section class="site-section site-section-alt">
     <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="display-5 fw-bold text-gradient mb-4">Explorar por Categorías</h2>
-            <p class="lead text-muted">Descubre diferentes tipos de recursos organizados por categorías</p>
-        </div>
+        <h2 class="site-section-title">Explorar por Categorías</h2>
+        <p class="site-section-subtitle">
+            Descubre diferentes tipos de recursos organizados por categorías
+        </p>
         
         <div class="row g-4">
             <div class="col-lg-4 col-md-6">
-                <div class="card border-0 shadow-soft h-100 hover-lift text-center">
-                    <div class="card-body p-5">
-                        <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
-                            <i class="fas fa-music text-primary fs-2"></i>
+                <div class="site-card">
+                    <div class="site-card-body text-center">
+                        <div class="site-card-icon mb-3">
+                            <i class="fas fa-music"></i>
                         </div>
-                        <h4 class="fw-bold mb-3">Grabaciones de Audio</h4>
-                        <p class="text-muted mb-4">Escucha interpretaciones auténticas del canto gregoriano de diferentes épocas y comunidades.</p>
-                        <a href="?tipo=audio" class="btn btn-outline-primary">
+                        <h4 class="site-card-title">Grabaciones de Audio</h4>
+                        <p class="site-card-text">Escucha interpretaciones auténticas del canto gregoriano de diferentes épocas y comunidades.</p>
+                        <a href="?tipo=audio" class="site-btn site-btn-outline">
                             <i class="fas fa-music me-2"></i> Explorar Audios
                         </a>
                     </div>
@@ -314,14 +304,14 @@
             </div>
             
             <div class="col-lg-4 col-md-6">
-                <div class="card border-0 shadow-soft h-100 hover-lift text-center">
-                    <div class="card-body p-5">
-                        <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
-                            <i class="fas fa-video text-danger fs-2"></i>
+                <div class="site-card">
+                    <div class="site-card-body text-center">
+                        <div class="site-card-icon mb-3">
+                            <i class="fas fa-video"></i>
                         </div>
-                        <h4 class="fw-bold mb-3">Videos y Conciertos</h4>
-                        <p class="text-muted mb-4">Disfruta de conciertos, liturgias y clases magistrales en video.</p>
-                        <a href="?tipo=video" class="btn btn-outline-danger">
+                        <h4 class="site-card-title">Videos y Conciertos</h4>
+                        <p class="site-card-text">Disfruta de conciertos, liturgias y clases magistrales en video.</p>
+                        <a href="?tipo=video" class="site-btn site-btn-outline">
                             <i class="fas fa-video me-2"></i> Explorar Videos
                         </a>
                     </div>
@@ -329,14 +319,14 @@
             </div>
             
             <div class="col-lg-4 col-md-6">
-                <div class="card border-0 shadow-soft h-100 hover-lift text-center">
-                    <div class="card-body p-5">
-                        <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
-                            <i class="fas fa-file-alt text-success fs-2"></i>
+                <div class="site-card">
+                    <div class="site-card-body text-center">
+                        <div class="site-card-icon mb-3">
+                            <i class="fas fa-file-alt"></i>
                         </div>
-                        <h4 class="fw-bold mb-3">Partituras y Notación</h4>
-                        <p class="text-muted mb-4">Estudia la notación gregoriana y descarga partituras para tu práctica.</p>
-                        <a href="?tipo=partitura" class="btn btn-outline-success">
+                        <h4 class="site-card-title">Partituras y Notación</h4>
+                        <p class="site-card-text">Estudia la notación gregoriana y descarga partituras para tu práctica.</p>
+                        <a href="?tipo=partitura" class="site-btn site-btn-outline">
                             <i class="fas fa-file-alt me-2"></i> Explorar Partituras
                         </a>
                     </div>
