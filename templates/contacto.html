@@ -95,13 +95,16 @@
         
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <div class="site-card">
-                    <div class="site-card-body">
-                        <form method="POST" action="{{ url_for('contacto') }}" class="needs-validation" novalidate>
+                <div class="contact-form-container">
+                    <div class="contact-form-header">
+                        <h3 class="form-title">Envíanos un Mensaje</h3>
+                        <p class="form-subtitle">Completa el formulario y nos pondremos en contacto contigo pronto</p>
+                    </div>
+                    <form method="POST" action="{{ url_for('contacto') }}" class="contact-form needs-validation" novalidate>
                             <div class="row g-4">
                                 <div class="col-md-6">
-                                    <label for="nombre" class="form-label fw-bold">
-                                        <i class="fas fa-user me-2 text-primary"></i>Nombre Completo *
+                                    <label for="nombre" class="form-label required">
+                                        <i class="fas fa-user"></i>Nombre Completo
                                     </label>
                                     <input type="text" class="form-control" id="nombre" name="nombre" required>
                                     <div class="invalid-feedback">
@@ -110,8 +113,8 @@
                                 </div>
                                 
                                 <div class="col-md-6">
-                                    <label for="email" class="form-label fw-bold">
-                                        <i class="fas fa-envelope me-2 text-primary"></i>Correo Electrónico *
+                                    <label for="email" class="form-label required">
+                                        <i class="fas fa-envelope"></i>Correo Electrónico
                                     </label>
                                     <input type="email" class="form-control" id="email" name="email" required>
                                     <div class="invalid-feedback">
@@ -120,8 +123,8 @@
                                 </div>
                                 
                                 <div class="col-12">
-                                    <label for="asunto" class="form-label fw-bold">
-                                        <i class="fas fa-tag me-2 text-primary"></i>Asunto
+                                    <label for="asunto" class="form-label">
+                                        <i class="fas fa-tag"></i>Asunto
                                     </label>
                                     <select class="form-select" id="asunto" name="asunto">
                                             <option value="">Selecciona un asunto</option>
@@ -136,8 +139,8 @@
                                 </div>
                                 
                                 <div class="col-12">
-                                    <label for="mensaje" class="form-label fw-bold">
-                                        <i class="fas fa-comment me-2 text-primary"></i>Mensaje *
+                                    <label for="mensaje" class="form-label required">
+                                        <i class="fas fa-comment"></i>Mensaje
                                     </label>
                                     <textarea class="form-control" id="mensaje" name="mensaje" rows="6" required placeholder="Cuéntanos cómo podemos ayudarte..."></textarea>
                                     <div class="invalid-feedback">
@@ -165,8 +168,8 @@
                                 </div>
                                 
                                 <div class="col-12 text-center">
-                                    <button type="submit" class="site-btn site-btn-primary btn-lg">
-                                        <i class="fas fa-paper-plane me-2"></i> Enviar Mensaje
+                                    <button type="submit" class="btn-submit">
+                                        <i class="fas fa-paper-plane"></i> Enviar Mensaje
                                     </button>
                                 </div>
                             </div>
