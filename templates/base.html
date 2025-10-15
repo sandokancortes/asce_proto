@@ -28,14 +28,24 @@
                 <div class="site-header-content">
                     <!-- Logo -->
                     <a class="site-logo" href="{{ url_for('inicio') }}">
-                        <div class="site-logo-icon">
-                            <i class="fas fa-music"></i>
+                        <div class="site-logo-image">
+                            <img src="{{ url_for('static', filename='images/salterrae-logo-header.png') }}" alt="Sal Terrae - Vos Estis Sal Terrae" class="logo-img">
                         </div>
                         <div class="site-logo-text">
-                            <h1>Canto Gregoriano</h1>
-                            <p>Comunidad y Tradición</p>
+                            <h1>Sal<strong>&middot;</strong>Terrae</h1>
+                            <p>Vos Estis Sal Terrae</p>
                         </div>
                     </a>
+                    
+                    <!-- Search Bar -->
+                    <div class="site-search-container">
+                        <div class="search-input-group">
+                            <input type="text" class="form-control search-input" placeholder="Buscar..." aria-label="Buscar">
+                            <button class="btn search-btn" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
                     
                     <!-- Navigation -->
                     <nav class="site-nav">
@@ -82,24 +92,6 @@
                             </a>
                         </div>
                     </nav>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Search Bar -->
-        <div class="site-search-bar">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6 col-md-8">
-                        <div class="search-container">
-                            <div class="search-input-group">
-                                <input type="text" class="form-control search-input" placeholder="Buscar en el sitio..." aria-label="Buscar">
-                                <button class="btn search-btn" type="button">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

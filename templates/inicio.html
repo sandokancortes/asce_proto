@@ -15,24 +15,32 @@
         <div class="carousel-inner">
             <!-- Slide 1: Welcome -->
             <div class="carousel-item active">
+                <div class="carousel-background-image">
+                    <img src="{{ url_for('static', filename='images/monges_solesmes.png') }}" alt="Monjes de Solesmes" class="carousel-bg-img">
+                    <div class="carousel-gradient-overlay"></div>
+                </div>
                 <div class="container">
-                    <h1 class="site-hero-title">Bienvenidos a Canto Gregoriano</h1>
-                    <p class="site-hero-subtitle">
-                        Descubre la belleza atemporal de la música sacra que ha inspirado a generaciones durante más de mil años
-                    </p>
-                    <p class="site-hero-description">
-                        Una tradición que conecta el cielo con la tierra a través de melodías divinas. 
-                        Únete a nuestra comunidad y explora el rico patrimonio del canto gregoriano.
-                    </p>
-                    <div class="site-hero-actions">
-                        <a href="{{ url_for('biblioteca') }}" class="site-btn site-btn-primary">
-                            <i class="fas fa-music"></i>
-                            Explorar Biblioteca
-                        </a>
-                        <a href="{{ url_for('historia') }}" class="site-btn site-btn-secondary">
-                            <i class="fas fa-book"></i>
-                            Conocer Historia
-                        </a>
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="site-hero-title">Bienvenidos a Canto Gregoriano</h1>
+                            <p class="site-hero-subtitle">
+                                Descubre la belleza atemporal de la música sacra que ha inspirado a generaciones durante más de mil años
+                            </p>
+                            <p class="site-hero-description">
+                                Una tradición que conecta el cielo con la tierra a través de melodías divinas. 
+                                Únete a nuestra comunidad y explora el rico patrimonio del canto gregoriano.
+                            </p>
+                            <div class="site-hero-actions">
+                                <a href="{{ url_for('biblioteca') }}" class="site-btn site-btn-primary">
+                                    <i class="fas fa-music"></i>
+                                    Explorar Biblioteca
+                                </a>
+                                <a href="{{ url_for('historia') }}" class="site-btn site-btn-secondary">
+                                    <i class="fas fa-book"></i>
+                                    Conocer Historia
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
